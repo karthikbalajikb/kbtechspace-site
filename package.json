@@ -2,7 +2,7 @@
   "name": "gatsby-starter-default",
   "description": "Gatsby default starter",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Karthik Balaji <karthik.akb009@gmail.com>",
   "dependencies": {
     "gatsby": "^1.9.247",
     "gatsby-image": "^1.0.54",
@@ -17,7 +17,7 @@
     "typography-theme-grand-view": "^0.15.10"
   },
   "keywords": [
-    "gatsby"
+    "gatsby", "blog", "CSS Grid", "SASS", "BEM Naming", "Jest", "PWA"
   ],
   "license": "MIT",
   "scripts": {
@@ -31,6 +31,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/karthikbalajikb/kbtechspace-site.git"
   }
 }
