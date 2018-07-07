@@ -11,8 +11,8 @@ const Layout = ({ children, data }) => (
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: 'Sample' },
-        { name: 'keywords', content: 'sample, something' },
+        { name: 'description', content: 'Blog' },
+        { name: 'keywords', content: 'Blog, Javascript, ES6, Learn, Guide, Personal,' },
       ]}
     />
     <div className="kbts-site-container">

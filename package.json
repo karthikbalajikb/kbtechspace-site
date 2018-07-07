@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "kb-techspace-site",
+  "description": "KB TechSpace is a personal blog on latest technologies",
   "version": "1.0.0",
   "author": "Karthik Balaji <karthik.akb009@gmail.com>",
   "dependencies": {
