@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import SideMenu from '../components/side-menu/side-menu'
 import Header from '../components/header'
 import './index.scss'
+import favicon from '../../assets/logo.jpg'
 
 const Layout = ({ children, data }) => (
   <div>
@@ -14,6 +15,9 @@ const Layout = ({ children, data }) => (
         { name: 'description', content: 'Blog' },
         { name: 'keywords', content: 'Blog, Javascript, ES6, Learn, Guide, Personal,' },
       ]}
+      link={[
+        { rel: 'shortcut icon', type: 'image/jpg', href: `${favicon}` }
+    ]}
     />
     <div className="kbts-site-container">
       <SideMenu logo={data.headerImage.sizes}/>
