@@ -1,0 +1,56 @@
+@import "../../../public/static/fontawesome/scss/fontawesome.scss";
+$fa-font-path: "../../../public/static/fontawesome/scss/webfonts";
+
+@import "../../../public/static/fontawesome/scss/fa-solid.scss";
+@import "../../../public/static/fontawesome/scss/fa-brands.scss";
+
+
+
+.sideMenuContent {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  align-content: baseline;
+}
+
+.sideMenuContent-item {
+  @include fa-icon;
+
+  display: grid;
+  justify-content: space-evenly;
+  border-bottom: 1px solid #515556;
+  font-size: 11px;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  padding: 7%;
+  text-align: center;
+  color: #8e969a;
+
+  &-home, &-about, &-blog{
+    display: grid;
+    text-decoration: none;
+    color: #8e969a;
+  }
+
+  &-home-icon,&-about-icon,&-blog-icon{
+     @extend .fas;
+    padding-bottom: 4px;
+    font-size: x-large;
+  }
+
+  &-home-icon:before{
+    content: fa-content($fa-var-home);
+  }
+  &-about-icon:before{
+    content: fa-content($fa-var-user-secret);
+  }
+  &-blog-icon:before{
+    content: fa-content($fa-var-newspaper);
+  }
+}
+
+.side-menu {
+  overflow: scroll;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background-color: #1c262b;
+}

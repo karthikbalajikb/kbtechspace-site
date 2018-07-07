@@ -1,0 +1,45 @@
+import React from 'react'
+import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
+
+import SideMenu from '../components/side-menu/side-menu'
+import Header from '../components/header'
+import './index.scss'
+
+const Layout = ({ children, data }) => (
+  <div>
+    <Helmet
+      title={data.site.siteMetadata.title}
+      meta={[
+        { name: 'description', content: 'Sample' },
+        { name: 'keywords', content: 'sample, something' },
+      ]}
+    />
+    <div className="kbts-site-container">
+      <SideMenu logo={data.headerImage.sizes}/>
+      <main className="site-main-content">{children()}</main>
+    </div>
+  </div>
+)
+
+Layout.propTypes = {
+  children: PropTypes.func,
+}
+
+export default Layout
+
+export const query = graphql`
+  query SiteQuery {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+
+    headerImage: imageSharp(id: { regex: "/logo/" }) {
+      sizes(maxWidth: 1240 ) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+  }
+`
