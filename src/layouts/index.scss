@@ -1,4 +1,8 @@
-@import "../../assets/fontawesome/scss/fontawesome.scss";
+@import '../../assets/fontawesome/scss/fontawesome.scss';
+$fa-font-path: '../../assets/fontawesome/webfonts';
+
+@import '../../assets/fontawesome/scss/fa-solid.scss';
+@import '../../assets/fontawesome/scss/fa-brands.scss';
 
 html {
   font-family: sans-serif;
@@ -15,18 +19,70 @@ body {
   }
 }
 
+@media only screen and (max-width: 760px) {
+  .kbts-site-container {
+    grid-template-columns: auto;
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .kbts-site-container {
+    grid-template-columns: 120px auto !important; 
+  }
+}
+
+@media only screen and (min-width: 760px) {
+  .kbts-site-main {
+    display: grid;
+    grid-template-rows: 0px auto;
+  }
+  .kbts-site-header {
+    display: none !important;
+  }
+}
 /**
  Site CSS
 */
 
-.kbts-site-container{
+.kbts-site-container {
   display: grid;
-  grid-template-columns: 120px auto;
   height: 100vh;
   overflow: hidden;
 }
 
-.header-image{
+.header-image {
+  height: 100vh;
+}
+
+.kbts-site-header {
+  @include fa-icon;
+
+  display: grid;
+  grid-template-columns: 50px auto;
+  background: linear-gradient(to right, #540a2f, #1b010e);
+  height: 50px;
+  grid-column-gap: 30px;
+
+  &-menu {
+    @extend .fas;
+    border-right: 1px solid white;
+    display: grid;
+    justify-content: space-evenly;
+    align-content: space-evenly;
+  }
+  &-menu:before {
+    content: fa-content($fa-var-bars);
+    font-size: x-large;
+    color: white;
+  }
+  &-text {
+    color: white;
+    display: grid;
+    align-content: center;
+  }
+}
+
+.site-main-content{
   height: 100vh;
 }
 
