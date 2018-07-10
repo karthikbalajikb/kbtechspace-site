@@ -13,13 +13,19 @@ const SideMenuContent = () => (
     <div className="sideMenuContent-item">
       <Link className="sideMenuContent-item-about" to="/page-2/">
       <div className="sideMenuContent-item-about-icon" />
-        ABOUT
+        ABOUT ME
       </Link>
     </div>
     <div className="sideMenuContent-item">
       <Link className="sideMenuContent-item-blog" to="/page-2/">
       <div className="sideMenuContent-item-blog-icon" />
         BLOG
+      </Link>
+    </div>
+    <div className="sideMenuContent-item">
+      <Link className="sideMenuContent-item-resume" to="/resume/">
+      <div className="sideMenuContent-item-resume-icon" />
+        RESUME
       </Link>
     </div>
   </section>
