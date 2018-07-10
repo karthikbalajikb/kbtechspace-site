@@ -84,6 +84,8 @@ body {
 
 .site-main-content{
   height: 100vh;
+  background-color: #ebf0df;
+  overflow-y: scroll;
 }
 
 *::-webkit-scrollbar {
