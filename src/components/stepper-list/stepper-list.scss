@@ -1,0 +1,30 @@
+.kbts-stepper-list {
+  padding: 10%;
+  position: relative;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 47px;
+    bottom: 10px;
+    left: 37px;
+    width: 4px;
+    background: rgb(246, 248, 251);
+  }
+
+  &-icon{
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    position: absolute;
+    top: 6px;
+    left: 13px;
+    width: 52px;
+    line-height: 52px;
+    margin: 0;
+    color: #fff;
+    background: #8ACB82;
+    border-radius: 50%;
+  }
+}
+
