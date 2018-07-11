@@ -1,0 +1,21 @@
+.kbts-name-card{
+    position: absolute;
+    z-index: 1000;
+    bottom: 0;
+    color: white;
+    font-size: 150%;
+    text-align: center;
+    display: grid;
+    grid-template-rows: auto;
+    width: 100%;
+    letter-spacing: -1px;
+    justify-content: space-evenly;
+
+    &-text-1{
+        margin: 0;
+    }
+    &-text-2{
+        font-size: 200%;
+        letter-spacing: -4px;
+    }
+}

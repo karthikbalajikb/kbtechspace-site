@@ -45,6 +45,10 @@ class Layout extends React.Component {
             name: 'keywords',
             content: 'Blog, Javascript, ES6, Learn, Guide, Personal,',
           },
+          {
+            name: 'theme-color',
+            content: '#540a2f'
+          }
         ]}
         link={[{ rel: 'shortcut icon', type: 'image/jpg', href: `${favicon}` }]}
       />
