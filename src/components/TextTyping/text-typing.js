@@ -1,44 +1,35 @@
 import React from 'react'
 import './text-typing.scss'
 
-function* letterGen(letter) {
-  yield* letter;
-  // yield 'I'
-  // yield ' am'
-  // yield ' blogger'
-  // yield ' .'
-}
-
 class TextTyping extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = { text: ' ' }
+    this.timer
   }
 
   componentDidMount() {
-    let test = 'I am a blogger'
-    this.handleTyping(test)
+    this.handleTyping(this.props.text_3)
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timer)
   }
 
   handleTyping = letter => {
-    let letterArr = letter.split('');
-    console.log(letterArr)
-    let iter = letterGen(letterArr)
-    // for(let it of iter) {
-    //   // console.log(iter.next().done)
-    //   let l = it
-    let timer = setInterval(() => {
+    let letterArr = letter.split('')
+    let iter = letterArr[Symbol.iterator]()
+
+    this.timer = setInterval(() => {
       let l = iter.next()
-      if(l.done !== true){
-      this.setState({ text: this.state.text + l.value })
+      if (l.done !== true) {
+        this.setState({ text: this.state.text + l.value })
+      } else {
+        this.setState({ text: '' })
+        clearInterval(this.timer)
+        this.handleTyping(letter)
       }
-      else{
-      this.setState({text: ''});
-      clearInterval(timer);
-      this.handleTyping(letter)
-      }
-    }, 250)
-    // }
+    }, 100)
   }
 
   render() {
