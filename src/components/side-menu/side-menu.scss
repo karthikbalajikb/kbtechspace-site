@@ -1,8 +1,8 @@
-@import "../../../assets/fontawesome/scss/fontawesome.scss";
-$fa-font-path: "../../../assets/fontawesome/webfonts";
+@import '../../../assets/fontawesome/scss/fontawesome.scss';
+$fa-font-path: '../../../assets/fontawesome/webfonts';
 
-@import "../../../assets/fontawesome/scss/fa-solid.scss";
-@import "../../../assets/fontawesome/scss/fa-brands.scss";
+@import '../../../assets/fontawesome/scss/fa-solid.scss';
+@import '../../../assets/fontawesome/scss/fa-brands.scss';
 
 .sideMenuContent {
   display: grid;
@@ -17,35 +17,77 @@ $fa-font-path: "../../../assets/fontawesome/webfonts";
   justify-content: space-evenly;
   border-bottom: 1px solid #515556;
   font-size: 11px;
-  letter-spacing: .07em;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   padding: 7%;
   text-align: center;
   color: #8e969a;
 
-  &-home, &-about, &-blog, &-resume{
+  &-home,
+  &-about,
+  &-blog,
+  &-resume {
     display: grid;
     text-decoration: none;
     color: #8e969a;
   }
 
-  &-home-icon,&-about-icon,&-blog-icon,&-resume-icon{
-     @extend .fas;
+  &-home-icon,
+  &-about-icon,
+  &-blog-icon,
+  &-resume-icon {
+    @extend .fas;
     padding-bottom: 4px;
     font-size: x-large;
   }
 
-  &-home-icon:before{
+  &-home-icon:before {
     content: fa-content($fa-var-home);
   }
-  &-about-icon:before{
+  &-about-icon:before {
     content: fa-content($fa-var-user-secret);
   }
-  &-blog-icon:before{
+  &-blog-icon:before {
     content: fa-content($fa-var-newspaper);
   }
-  &-resume-icon:before{
+  &-resume-icon:before {
     content: fa-content($fa-var-id-card-alt);
+  }
+}
+
+.kbts-site-footer {
+  display: grid;
+  grid-template-rows: auto auto;
+  color: #87969a;
+  font-size: 0.6em;
+
+  .kbts-site-footer-social {
+    @include fa-icon;
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    grid-column-gap: 3px;
+    font-size: 1.5em;
+
+    &-fb-icon,
+    &-insta-icon,
+    &-twitter-icon,
+    &-linkedin-icon {
+      @extend .fab;
+    }
+
+    &-fb-icon:before {
+      content: fa-content($fa-var-facebook-square);
+    }
+    &-insta-icon:before {
+      content: fa-content($fa-var-instagram);
+    }
+    &-twitter-icon:before {
+      content: fa-content($fa-var-twitter-square);
+    }
+    &-linkedin-icon:before {
+      content: fa-content($fa-var-linkedin);
+    }
   }
 }
 

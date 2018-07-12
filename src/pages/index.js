@@ -6,7 +6,7 @@ import NameCard from '../components/NameCard/name-card'
 const IndexPage = ({ data }) => (
   <div>
     <Img sizes={data.headerImage.sizes} className="header-image" />
-    <NameCard text_1="Hi, I am" text_2="Karthik Balaji" text_3="I am a Javascript enthusiast, I am a Blogger" />
+    <NameCard text_1="Hi, I am" text_2="Karthik Balaji" text_3="I am a javascript enthusiast" />
   </div>
 )
 

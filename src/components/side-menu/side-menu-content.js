@@ -6,18 +6,18 @@ import './side-menu.scss'
 const SideMenuContent = () => (
   <section className="sideMenuContent">
     <div className="sideMenuContent-item">
-      <Link className="sideMenuContent-item-home" to="/page-2/">
+      <Link className="sideMenuContent-item-home" to="/">
         <div className="sideMenuContent-item-home-icon" />HOME
       </Link>
     </div>
     <div className="sideMenuContent-item">
-      <Link className="sideMenuContent-item-about" to="/page-2/">
+      <Link className="sideMenuContent-item-about" to="/about/">
       <div className="sideMenuContent-item-about-icon" />
         ABOUT ME
       </Link>
     </div>
     <div className="sideMenuContent-item">
-      <Link className="sideMenuContent-item-blog" to="/page-2/">
+      <Link className="sideMenuContent-item-blog" to="/blog/">
       <div className="sideMenuContent-item-blog-icon" />
         BLOG
       </Link>
