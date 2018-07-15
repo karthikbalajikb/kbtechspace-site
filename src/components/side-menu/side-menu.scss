@@ -64,7 +64,7 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
   .kbts-site-footer-social {
     @include fa-icon;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto auto;
     justify-content: center;
     grid-column-gap: 3px;
     font-size: 1.5em;
@@ -94,6 +94,7 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
 .side-menu {
   overflow: scroll;
   display: grid;
+  grid-template-columns: 120px;
   grid-template-rows: auto 1fr auto;
   background-color: #1c262b;
 }
