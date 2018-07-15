@@ -1,15 +1,15 @@
 .kbts-name-card{
     position: absolute;
-    z-index: 1000;
+    z-index: 1;
     bottom: 0;
     color: white;
     font-size: 150%;
     text-align: center;
     display: grid;
     grid-template-rows: auto;
-    width: 100%;
     letter-spacing: -1px;
-    justify-content: space-evenly;
+    left: 50%;
+    transform: translate(-50%, 0);
 
     &-text-1{
         margin: 0;
