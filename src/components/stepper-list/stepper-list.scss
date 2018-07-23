@@ -39,6 +39,21 @@
 .kbts-stepper-list-item {
   position: relative;
   padding: 0 1em 2em 2.4em;
+
+  &:after{
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: -8px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  &--current:after{
+    background: #8acb82;
+  }
   
   &-label {
     background-color: #8acb82;
