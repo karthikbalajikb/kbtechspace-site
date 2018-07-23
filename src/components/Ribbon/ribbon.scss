@@ -7,7 +7,10 @@
         margin: 0px;
         position: relative;
         left: 2em;
-    
+        top: 0.85em;
+        margin-bottom: 20px;
+        margin-top: 20px;
+        
         &:before {
             content: "";
             background-color: #8acb82;
@@ -59,7 +62,8 @@
             bottom: auto;
             z-index: 1;
             top: 1.8em;
-            left: 15.4em;
+            left: auto;
+            right: -0.5em;
             pointer-events: none;
             -webkit-mask: none;
             border-top: 0.5em solid rgba(8, 11, 12, 0.2);
