@@ -21,7 +21,6 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
   text-transform: uppercase;
   padding: 7%;
   text-align: center;
-  color: #8e969a;
 
   &-home,
   &-about,
@@ -29,7 +28,7 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
   &-resume {
     display: grid;
     text-decoration: none;
-    color: #8e969a;
+    color: #babebf85;
   }
 
   &-home-icon,
@@ -38,7 +37,7 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
   &-resume-icon {
     @extend .fas;
     padding-bottom: 4px;
-    font-size: x-large;
+    font-size: large;
   }
 
   &-home-icon:before {
@@ -97,4 +96,5 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
   grid-template-columns: 120px;
   grid-template-rows: auto 1fr auto;
   background-color: #1c262b;
+  z-index:2;
 }

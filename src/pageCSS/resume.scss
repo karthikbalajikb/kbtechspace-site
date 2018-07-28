@@ -1,0 +1,26 @@
+.kbts-page-resume {
+  display: grid;
+
+  &-content {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: space-evenly;
+  }
+
+  &-skills {
+    padding: 2em;
+    text-align: center;
+    grid-area: 1 / 2 / 4;
+  }
+}
+
+@media only screen and (max-width: 760px) {
+  .kbts-page-resume-content {
+    grid-template-columns: auto;
+  }
+
+  .kbts-page-resume-skills{
+      grid-area: 3
+  }
+}
+
