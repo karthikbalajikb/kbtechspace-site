@@ -1,0 +1,13 @@
+.kbts-page-blog {
+    display: grid;
+    grid-template-columns: 32% 32% 32%;
+    grid-gap: 40px;
+    text-align: center;
+    padding: 9%;
+}
+
+@media only screen and (max-width: 760px){
+    .kbts-page-blog{
+        grid-template-columns: auto;
+    }
+}
