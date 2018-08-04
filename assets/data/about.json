@@ -1,0 +1,26 @@
+[
+  {
+    "title": "web development",
+    "description":
+      "Will help you to make your online presence better with my own way of styling and combining your thoughts",
+      "icon" : "462678.png"
+  },
+  {
+    "title": "Hybrid Mobile Apps",
+    "description":
+      "Will help you to make your online presence better with my own way of styling and combining your thoughts",
+      "icon" : "hybrid-slider.png"
+  },
+  {
+    "title": "AR/VR Apps",
+    "description":
+      "Will help you to make your online presence better with my own way of styling and combining your thoughts",
+      "icon" : "vr-man.png"
+  },
+  {
+    "title": "Chat Bots",
+    "description":
+      "Will help you to make your online presence better with my own way of styling and combining your thoughts",
+      "icon" : "chatbot_tebot.png"
+  }
+]
