@@ -3,6 +3,8 @@ import React from 'react'
 import PageHeader from '../components/page-header/page-header'
 import Ribbon from '../components/Ribbon/ribbon'
 import ServiceCard from '../components/ServiceCard/service-card'
+import Pipeline from '../components/Pipeline/Pipeline';
+
 import '../pageCSS/about.scss'
 
 const About = ({ data }) => (
@@ -14,6 +16,17 @@ const About = ({ data }) => (
     <section className="kbts-page-about-service">
       {data.allAboutJson.edges.map(d => <ServiceCard data={d.node} />)}
     </section>
+    <div className="kbts-page-about-ribbon">
+      <Ribbon title="Work Process" />
+    </div>
+    <section className="kbts-page-about-work-progress" >
+      <Pipeline title="Idea" classname="" icon="fa-lightbulb" />
+      <Pipeline title="Design" classname="" icon="fa-pencil-alt" />
+      <Pipeline title="Develop" classname="" icon="fab fa-connectdevelop" />
+      <Pipeline title="Test" classname="" icon="fa-mobile-alt" />
+      <Pipeline title="Launch" classname="" icon="fa-rocket"/>
+      <Pipeline title="Make it better" classname="end" icon="fa-retweet" />
+      </section>
   </section>
 )
 
@@ -26,6 +39,7 @@ export const query = graphql`
         node {
           title
           description
+          icon
         }
       }
     }
