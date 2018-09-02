@@ -6,6 +6,7 @@ import SideMenu from '../components/side-menu/side-menu'
 import Header from '../components/header'
 import './index.scss'
 import favicon from '../../assets/logo.jpg'
+import "prismjs/themes/prism-tomorrow.css"
 
 class Layout extends React.Component {
   constructor(props){
