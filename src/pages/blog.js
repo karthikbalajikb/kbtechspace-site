@@ -38,6 +38,7 @@ export const BlogPageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             path
             title
+            banner
           }
         }
       }

@@ -1,0 +1,29 @@
+.blog__post {
+  font-family: 'Roboto', sans-serif;
+
+  &__container {
+    padding: 0 15%;
+  }
+
+  &__title {
+    color: #325556;
+    text-align: center;
+    padding-top: 40px;
+    font-size: 3em;
+  }
+
+  &__date {
+    color: lightgrey;
+    font-size: small;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+.blog__post__content {
+  p {
+    font-size: medium;
+    line-height: 1.6em;
+  }
+}

@@ -10,11 +10,23 @@ import '../pageCSS/resume.scss'
 
 const jobs = [
   {
-    duration: 'May 2015 - CURRENT',
-    role: 'Senior System Engineer',
+    duration: 'July 2018 - CURRENT',
+    role: 'Technology Analyst',
     company: 'Infosys',
     description: 'Passion alone drive me',
     markCurrent: true,
+  },
+  {
+    duration: 'May 2017 - July 2018',
+    role: 'Senior System Engineer',
+    company: 'Infosys',
+    description: 'Passion alone drive me',
+  },
+  {
+    duration: 'May 2015 - May 2017',
+    role: 'System Engineer',
+    company: 'Infosys',
+    description: 'Passion alone drive me',
   },
   {
     duration: '2016 - 2017',

@@ -25,7 +25,14 @@ module.exports = {
         name: "markdown-pages",
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-prismjs`,
+        ]
+      }
+    },
     {
       resolve: `gatsby-plugin-typography`,
       options: {
@@ -48,6 +55,13 @@ module.exports = {
         icon: "assets/logo.jpg", // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-offline`
+    `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-123629431-1",
+        head: true,
+      }
+    }
   ],
 }
