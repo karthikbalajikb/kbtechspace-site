@@ -36,6 +36,7 @@ class Layout extends React.Component {
   }
 
   render(){
+    const { pathname } =  this.props.location;
     return (
       <div>
       <Helmet
@@ -54,7 +55,7 @@ class Layout extends React.Component {
         link={[{ rel: 'shortcut icon', type: 'image/jpg', href: `${favicon}` }]}
       />
       <div className="kbts-site-container">
-        <SideMenu logo={this.props.data.headerImage.sizes} />
+        <SideMenu logo={this.props.data.headerImage.sizes} pathname={pathname} toggleSideMenu={this.toggleSideMenu}/>
         <section className="kbts-site-main">
           <header className="kbts-site-header">
             <a id="kbts-sidemenu-btn" className="kbts-site-header-menu" />
