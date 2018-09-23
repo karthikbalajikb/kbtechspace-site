@@ -12,10 +12,10 @@ export default function Template({
        <Helmet
         title={`${frontmatter.title} | Karthik Balaji`}
         meta={[
-          { name: 'description', content: 'Blog' },
+          { name: 'description', content: `${frontmatter.title}` },
           {
             name: 'keywords',
-            content: 'Blog, Javascript, ES6, Learn, Guide, Personal,',
+            content: `${frontmatter.tags.join()}`,
           },
           {
             name: 'theme-color',
@@ -27,6 +27,7 @@ export default function Template({
       <div className="blog__post">
         <h1 className="blog__post__title">{frontmatter.title}</h1>
         <p className="blog__post__date">{frontmatter.date}</p>
+        <div className="blog__post__tags">{frontmatter.tags.map(d => <p className="blog__post__tags__text">{d}</p>)}</div>
         <div
           className="blog__post__content"
           dangerouslySetInnerHTML={{ __html: html }}
@@ -45,6 +46,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         path
         title
+        tags
       }
     }
   }
