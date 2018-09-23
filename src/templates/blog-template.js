@@ -118,6 +118,7 @@ export const pageQuery = graphql`
         path
         title
         tags
+        banner
       }
     }
   }
