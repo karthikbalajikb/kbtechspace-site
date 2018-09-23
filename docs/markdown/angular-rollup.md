@@ -3,6 +3,7 @@ path: "/blog/react-weather-app"
 date: "2017-11-07"
 title: "React weather app"
 banner: "https://user-images.githubusercontent.com/8594076/36646017-c340bf96-1a97-11e8-99da-d4d5e48ba2e6.png"
+tags: ["react", "jest", "weather app", "open weather api"]
 ---
 
 ![wd](https://user-images.githubusercontent.com/8594076/36646017-c340bf96-1a97-11e8-99da-d4d5e48ba2e6.png)

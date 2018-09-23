@@ -3,6 +3,7 @@
 
   &__container {
     padding: 0 15%;
+    max-width: 100vw;
   }
 
   &__title {
@@ -18,6 +19,24 @@
     font-weight: 600;
     text-transform: uppercase;
     text-align: center;
+  }
+
+  &__tags{
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    &__text{
+      margin: 10px;
+      padding: 4px 15px;
+      background-color: #8acb82;
+      color: white;
+      font-weight: bold;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
   }
 }
 
