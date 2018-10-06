@@ -5,7 +5,7 @@ class TextTyping extends React.Component {
   constructor(props) {
     super(props);
     this.state = { text: ' ' }
-    this.timer
+    // this.timer;
   }
 
   componentDidMount() {
