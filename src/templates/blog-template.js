@@ -1,7 +1,5 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-
-import Layout from '../components';
 import './blog-template.scss'
 
 export default function Template({
@@ -43,7 +41,7 @@ export default function Template({
     description: `${frontmatter.title}`,
   })
   return (
-    <Layout pathname={'/blog/'}>
+    <div>
       <Helmet
         title={`${frontmatter.title} | Karthik Balaji`}
         meta={[
@@ -107,8 +105,7 @@ export default function Template({
           />
         </div>
       </div>
-    
-    </Layout>
+    </div>
   )
 }
 

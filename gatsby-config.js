@@ -55,12 +55,7 @@ module.exports = {
         icon: "assets/logo.jpg", // This path is relative to the root of the site.
       },
     },
-   {
-    resolve:  `gatsby-plugin-offline`,
-    options:{
-      navigateFallbackWhitelist: []
-    }
-   },
+    `gatsby-plugin-offline`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {

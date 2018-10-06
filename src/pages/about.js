@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Layout from '../components';
 import PageHeader from '../components/page-header/page-header'
 import Ribbon from '../components/Ribbon/ribbon'
 import ServiceCard from '../components/ServiceCard/service-card'
@@ -9,7 +8,6 @@ import Pipeline from '../components/Pipeline/Pipeline';
 import '../pageCSS/about.scss'
 
 const About = ({ data }) => (
-  <Layout pathname={'/about/'}>
   <section className="kbts-page-about">
     <PageHeader title="about me" logo="fas fa-user-secret" />
     <div className="kbts-page-about-ribbon">
@@ -30,7 +28,6 @@ const About = ({ data }) => (
       <Pipeline title="Make it better" classname="end" icon="fa-retweet" />
       </section>
   </section>
-  </Layout>
 )
 
 export default About

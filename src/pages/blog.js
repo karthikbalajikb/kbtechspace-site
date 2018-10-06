@@ -1,6 +1,5 @@
 import React from 'react'
 
-import Layout from '../components';
 import PageHeader from '../components/page-header/page-header'
 import BlogCard from '../components/BlogCard/blog-card'
 import Card from '../components/Card/Card'
@@ -14,7 +13,6 @@ const Blog = ({
   },
 }) => {
   return (
-    <Layout pathname={'/blog/'}>
     <section>
       <PageHeader title="blog" logo="fas fa-newspaper" />
       {/* <BlogCard edges={edges} /> */}
@@ -24,7 +22,6 @@ const Blog = ({
           .map(edge => <Card logo={sizes} key={edge.node.id} post={edge.node}  />   )}
       </section>
     </section>
-    </Layout>
   )
 }
 
@@ -47,7 +44,7 @@ export const BlogPageQuery = graphql`
       }
     }
 
-    headerImage: imageSharp(fluid: {originalName: {regex: "/logo/"}}) {
+    headerImage: imageSharp(id: { regex: "/logo/" }) {
       sizes(maxWidth: 1240) {
         ...GatsbyImageSharpSizes
       }

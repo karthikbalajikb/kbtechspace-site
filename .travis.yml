@@ -4,7 +4,7 @@ node_js:
 
 branches:
   only:
-    - develop
+    - master
 
 cache:
   directories:
@@ -23,7 +23,6 @@ deploy:
   local_dir: public
   skip_cleanup: true
   on:
-    branch: develop  
     repo: karthikbalajikb/kbtechspace-site
-  bucket: dev.kbtechspace.com
+  bucket: kbtechspace.com
   region: us-east-1
