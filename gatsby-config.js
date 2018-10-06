@@ -43,24 +43,24 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
-  //   {
-  //     resolve: `gatsby-plugin-manifest`,
-  //     options: {
-  //       name: "KB TechSpace",
-  //       short_name: "KBTechSpace",
-  //       start_url: "/",
-  //       background_color: "#0c498a",
-  //       theme_color: "#540a2f",
-  //       display: "standalone",
-  //       icon: "assets/logo.jpg", // This path is relative to the root of the site.
-  //     },
-  //   },
-  //  {
-  //   resolve:  `gatsby-plugin-offline`,
-  //   options:{
-  //     navigateFallbackWhitelist: []
-  //   }
-  //  },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "KB TechSpace",
+        short_name: "KBTechSpace",
+        start_url: "/",
+        background_color: "#0c498a",
+        theme_color: "#540a2f",
+        display: "standalone",
+        icon: "assets/logo.jpg", // This path is relative to the root of the site.
+      },
+    },
+   {
+    resolve:  `gatsby-plugin-offline`,
+    options:{
+      navigateFallbackWhitelist: []
+    }
+   },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
