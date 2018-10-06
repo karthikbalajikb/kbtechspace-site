@@ -1,11 +1,14 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 
+import Layout from '../components';
 import PageHeader from '../components/page-header/page-header'
 import StepperList from '../components/stepper-list/stepper-list'
 import SliderList from '../components/SliderList/slider-list'
 import Ribbon from '../components/Ribbon/ribbon'
 
+import favicon from '../../assets/logo.jpg'
 import '../pageCSS/resume.scss'
 
 const jobs = [
@@ -53,43 +56,93 @@ const eduction = [
   },
 ]
 
-const Resume = () => (
-  <section className="kbts-page-resume">
-    <PageHeader title="resume" logo="fas fa-id-card-alt" />
-    <div className="kbts-page-resume-content">
-      <StepperList title="WORK HISTORY" icon="fa-laptop" jobs={jobs} />
-      <article className="kbts-page-resume-skills">
-        <Ribbon title="coding skills" />
-        <SliderList text="HTML5" value="100" />
-        <SliderList text="CSS3" value="90" />
-        <SliderList text="React" value="90" />
-        <SliderList text="Angular" value="90" />
-        <SliderList text="NodeJS" value="70" />
 
-        <Ribbon title="Standards & Patterns" />
-        <SliderList text="ES6" value="100" />
-        <SliderList text="REDUX" value="80" />
 
-        <Ribbon title="Cloud" />
-        <SliderList text="Amazon web services" value="70" />
+class Resume extends React.Component {
 
-        <Ribbon title="Build tools" />
-        <SliderList text="Webpack" value="100" />
-        <SliderList text="Rollup" value="80" />
+  getJSONLD = () => ({
+    '@context': 'http://schema.org',
+    '@type': 'Article',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `https://kbtechspace.com/resume/`,
+    },
+    headline: `Karthik Balaji | Resume`,
+    image: {
+      '@type': 'ImageObject',
+      url: `https://user-images.githubusercontent.com/8594076/45932661-210beb00-bf9d-11e8-892c-192e9bba6750.jpg`,
+      height: 630,
+      width: 1200,
+    },
+    author: {
+      '@type': 'Person',
+      name: 'Karthik Balaji',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'KB TechSpace',
+      logo: {
+        '@type': 'ImageObject',
+        url:
+          'https://user-images.githubusercontent.com/8594076/45932661-210beb00-bf9d-11e8-892c-192e9bba6750.jpg',
+        width: 257,
+        height: 60,
+      },
+    },
+    description: 'Know about my skills',
+  })
 
-        <Ribbon title="CMS" />
-        <SliderList text="Wordpress" value="80" />
-        <SliderList text="WooCommerce" value="90" />
+  render() {
+    return (
+      <Layout pathname={'/resume/'}>
+      <section className="kbts-page-resume">
+        <Helmet defaultTitle={`Karthik Balaji | Resume`} >
+          {/* title="Karthik Balaji | Resume" */}
+          <meta name="description" content="Know about my technical skills" data-react-helmet="true" />
+          <html lang="en" />
+        </Helmet>
+        <PageHeader title="resume" logo="fas fa-id-card-alt" />
+        <div className="kbts-page-resume-content">
+          <StepperList title="WORK HISTORY" icon="fa-laptop" jobs={jobs} />
+          <article className="kbts-page-resume-skills">
+            <Ribbon title="coding skills" />
+            <SliderList text="HTML5" value="100" />
+            <SliderList text="CSS3" value="90" />
+            <SliderList text="React" value="90" />
+            <SliderList text="Angular" value="90" />
+            <SliderList text="NodeJS" value="70" />
 
-        <Ribbon title="External Services" />
-        <SliderList text="IBM Watson" value="80" />
-        <SliderList text="Google API" value="70" />
-        <SliderList text="Facebook API" value="80" />
-        <SliderList text="Twilio API" value="70" />
-      </article>
-      <StepperList title="EDUCATION" icon="fa-graduation-cap" jobs={eduction} />
-    </div>
-  </section>
-)
+            <Ribbon title="Standards & Patterns" />
+            <SliderList text="ES6" value="100" />
+            <SliderList text="REDUX" value="80" />
+
+            <Ribbon title="Cloud" />
+            <SliderList text="Amazon web services" value="70" />
+
+            <Ribbon title="Build tools" />
+            <SliderList text="Webpack" value="100" />
+            <SliderList text="Rollup" value="80" />
+
+            <Ribbon title="CMS" />
+            <SliderList text="Wordpress" value="80" />
+            <SliderList text="WooCommerce" value="90" />
+
+            <Ribbon title="External Services" />
+            <SliderList text="IBM Watson" value="80" />
+            <SliderList text="Google API" value="70" />
+            <SliderList text="Facebook API" value="80" />
+            <SliderList text="Twilio API" value="70" />
+          </article>
+          <StepperList
+            title="EDUCATION"
+            icon="fa-graduation-cap"
+            jobs={eduction}
+          />
+        </div>
+      </section>
+      </Layout>
+    )
+  }
+}
 
 export default Resume

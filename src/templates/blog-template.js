@@ -1,5 +1,7 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+
+import Layout from '../components';
 import './blog-template.scss'
 
 export default function Template({
@@ -41,7 +43,7 @@ export default function Template({
     description: `${frontmatter.title}`,
   })
   return (
-    <div>
+    <Layout pathname={'/blog/'}>
       <Helmet
         title={`${frontmatter.title} | Karthik Balaji`}
         meta={[
@@ -105,7 +107,8 @@ export default function Template({
           />
         </div>
       </div>
-    </div>
+    
+    </Layout>
   )
 }
 
@@ -118,6 +121,7 @@ export const pageQuery = graphql`
         path
         title
         tags
+        banner
       }
     }
   }
