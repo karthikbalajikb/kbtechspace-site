@@ -126,7 +126,7 @@ class Layout extends React.Component {
         query={query}
         render={data => (
           <div>
-            <Helmet
+            {/* <Helmet
               title={data.site.siteMetadata.title}
               meta={[
                 { name: 'description', content: 'Blog' },
@@ -146,7 +146,7 @@ class Layout extends React.Component {
               link={[
                 { rel: 'shortcut icon', type: 'image/jpg', href: `${favicon}` },
               ]}
-            />
+            /> */}
             <div className="kbts-site-container">
               <SideMenu
                 logo={data.headerImage.sizes}

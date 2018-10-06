@@ -96,8 +96,8 @@ class Resume extends React.Component {
     return (
       <Layout pathname={'/resume/'}>
       <section className="kbts-page-resume">
-        <Helmet defaultTitle={`Karthik Balaji | Resume`} >
-          {/* title="Karthik Balaji | Resume" */}
+        <Helmet >
+           <title> Karthik Balaji | Resume</title>
           <meta name="description" content="Know about my technical skills" data-react-helmet="true" />
           <html lang="en" />
         </Helmet>
