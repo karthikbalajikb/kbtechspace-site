@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Karthik Balaji <karthik.akb009@gmail.com>",
   "dependencies": {
+    "@sentry/browser": "^5.1.1",
     "gatsby": "^2.0.17",
     "gatsby-image": "^2.0.13",
     "gatsby-link": "^2.0.3",

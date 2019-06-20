@@ -13,11 +13,17 @@ import '../pageCSS/resume.scss'
 
 const jobs = [
   {
-    duration: 'July 2018 - CURRENT',
+    duration: 'November 2018 - CURRENT',
+    role: 'Software Engineer - Front End',
+    company: 'Auzmor',
+    description: 'Passion alone drive me',
+    markCurrent: true,
+  },
+  {
+    duration: 'July 2018 - November 2018',
     role: 'Technology Analyst',
     company: 'Infosys',
     description: 'Passion alone drive me',
-    markCurrent: true,
   },
   {
     duration: 'May 2017 - July 2018',
