@@ -10,11 +10,9 @@ before_script:
 script:
   - npm run build
 deploy:
-  provider: firebase
-  on:
-    branches:
-      only:
-        - develop
-  token:
+  - provider: firebase
+    on:
+      branch: develop
+    token:
     secure: '4kTsOjvTUaEkF8IRFvvV9a09fm4buZKsyF7xsnwtC9OEEUdDpOsN7qI0lKIkAS+M7c68SFKOLrAyo/ODEwAbJBvgNuoWf4IoC9HNouHHjFhzwDyKBaTGuplCSiivMcBzanD1BGWD/Zflu1VTJjWI2+puUd6OTNzG58KMRQa6cjprRGfujuWdspsYbYt1Ek/wCjCfhQBazcnyRmOBWRWDvrZocPZu3H5KyC7Cm14wr4NZF5ImfSuxVfrSRAg1JYYoLM7rBdUE1tYDIKd1y2y91/wHy3lKx/thkhzZ8QI4wMRI5GarcZIOUrcp2zsPn4YyE4u7AjTkcBWerJSgqgpVVCS62UClYulQFU6YIrHy7YiUZ+nd2PLhkzKnNo1GmZw5XZe1P/o8HqHmrRVsrWrvuEQFun7sjPrdPW/IfhLaD8WBVmPlBnGBVh9tX5/IoogLPjUNtRaYeQMcmSK1OlNQyOT8xFa4MyIBXQnX3ne2xB9Icne46+j3EdrTIHWxQEnXeALrrTSvC2Sf/dAyafzANGFsVJuEqga/GxNNG6EINIt1cJRdkch565TboYX5k4s20x4ra373Evuorao2vyh4MIOanEpNEZ2gVjfSM8xbzP4aGR9n5LDTdlO0x6waPlJA9oHcd4m7/QLBsVlWsR2kPnmMaKksHgLcnQUijEWSak0='
-  message: 'Yooo KB !!! ... KB TechSpace is deployed now'
+    message: 'Yooo KB !!! ... KB TechSpace is deployed now'
