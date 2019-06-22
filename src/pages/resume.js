@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 
-import Layout from '../components';
+import Layout from '../components'
 import PageHeader from '../components/page-header/page-header'
 import StepperList from '../components/stepper-list/stepper-list'
 import SliderList from '../components/SliderList/slider-list'
@@ -62,10 +62,7 @@ const eduction = [
   },
 ]
 
-
-
 class Resume extends React.Component {
-
   getJSONLD = () => ({
     '@context': 'http://schema.org',
     '@type': 'Article',
@@ -101,51 +98,61 @@ class Resume extends React.Component {
   render() {
     return (
       <Layout pathname={'/resume/'}>
-      <section className="kbts-page-resume">
-        <Helmet defaultTitle={`Karthik Balaji | Resume`} >
-          {/* title="Karthik Balaji | Resume" */}
-          <meta name="description" content="Know about my technical skills" data-react-helmet="true" />
-          <html lang="en" />
-        </Helmet>
-        <PageHeader title="resume" logo="fas fa-id-card-alt" />
-        <div className="kbts-page-resume-content">
-          <StepperList title="WORK HISTORY" icon="fa-laptop" jobs={jobs} />
-          <article className="kbts-page-resume-skills">
-            <Ribbon title="coding skills" />
-            <SliderList text="HTML5" value="100" />
-            <SliderList text="CSS3" value="90" />
-            <SliderList text="React" value="90" />
-            <SliderList text="Angular" value="90" />
-            <SliderList text="NodeJS" value="70" />
+        <section className="kbts-page-resume">
+          <Helmet defaultTitle={`Karthik Balaji | Resume`}>
+            {/* title="Karthik Balaji | Resume" */}
+            <meta
+              name="description"
+              content="Know about my technical skills"
+              data-react-helmet="true"
+            />
+            <html lang="en" />
+          </Helmet>
+          <PageHeader title="resume" logo="fas fa-id-card-alt" />
+          <div className="kbts-page-resume-content">
+            <StepperList title="WORK HISTORY" icon="fa-laptop" jobs={jobs} />
+            <article className="kbts-page-resume-skills">
+              <Ribbon title="Web Technology" />
+              <SliderList text="HTML5" value="100" />
+              <SliderList text="CSS3" value="90" />
+              <SliderList text="React" value="90" />
+              <SliderList text="Angular" value="90" />
+              <SliderList text="NodeJS" value="70" />
 
-            <Ribbon title="Standards & Patterns" />
-            <SliderList text="ES6" value="100" />
-            <SliderList text="REDUX" value="80" />
+              <Ribbon title="Immersive Technology" />
+              <SliderList text="Morzilla A-Frame" value="40" />
+              <SliderList text="Vuforia" value="20" />
+              <SliderList text="Google ARCore" value="10" />
+              <SliderList text="Apple ARKit" value="10" />
 
-            <Ribbon title="Cloud" />
-            <SliderList text="Amazon web services" value="70" />
+              <Ribbon title="Standards & Patterns" />
+              <SliderList text="ES6" value="100" />
+              <SliderList text="REDUX" value="80" />
 
-            <Ribbon title="Build tools" />
-            <SliderList text="Webpack" value="100" />
-            <SliderList text="Rollup" value="80" />
+              <Ribbon title="Cloud" />
+              <SliderList text="Amazon web services" value="70" />
 
-            <Ribbon title="CMS" />
-            <SliderList text="Wordpress" value="80" />
-            <SliderList text="WooCommerce" value="90" />
+              <Ribbon title="Build tools" />
+              <SliderList text="Webpack" value="100" />
+              <SliderList text="Rollup" value="80" />
 
-            <Ribbon title="External Services" />
-            <SliderList text="IBM Watson" value="80" />
-            <SliderList text="Google API" value="70" />
-            <SliderList text="Facebook API" value="80" />
-            <SliderList text="Twilio API" value="70" />
-          </article>
-          <StepperList
-            title="EDUCATION"
-            icon="fa-graduation-cap"
-            jobs={eduction}
-          />
-        </div>
-      </section>
+              <Ribbon title="CMS" />
+              <SliderList text="Wordpress" value="80" />
+              <SliderList text="WooCommerce" value="90" />
+
+              <Ribbon title="External Services" />
+              <SliderList text="IBM Watson" value="80" />
+              <SliderList text="Google API" value="70" />
+              <SliderList text="Facebook API" value="80" />
+              <SliderList text="Twilio API" value="70" />
+            </article>
+            <StepperList
+              title="EDUCATION"
+              icon="fa-graduation-cap"
+              jobs={eduction}
+            />
+          </div>
+        </section>
       </Layout>
     )
   }
