@@ -75,7 +75,7 @@ export const query = graphql`
         title
       }
     }
-    headerImage: imageSharp(fluid: { originalName: { regex: "/logo/" } }) {
+    headerImage: imageSharp(fluid: { originalName: { regex: "/logo2/" } }) {
       sizes(maxWidth: 1240) {
         ...GatsbyImageSharpSizes
       }

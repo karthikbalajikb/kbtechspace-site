@@ -1,14 +1,15 @@
-@import "../../../assets/fontawesome/scss/fontawesome.scss";
-$fa-font-path: "../../../assets/fontawesome/webfonts";
+@import '../../../assets/fontawesome/scss/fontawesome.scss';
+$fa-font-path: '../../../assets/fontawesome/webfonts';
 
-@import "../../../assets/fontawesome/scss/fa-solid.scss";
-@import "../../../assets/fontawesome/scss/fa-brands.scss";
+@import '../../../assets/fontawesome/scss/fa-solid.scss';
+@import '../../../assets/fontawesome/scss/fa-brands.scss';
 
-.kbts-name-card-text-3{
-    @include fa-icon;
+.kbts-name-card-text-3 {
+  @include fa-icon;
 
-    &:after{
-        @extend .fas;
-       content: fa-content($fa-var-i-cursor);
-    }
+  &:after {
+    @extend .fas;
+    content: fa-content($fa-var-i-cursor);
+    padding-left: 3px;
+  }
 }

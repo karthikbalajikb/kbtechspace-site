@@ -1,5 +1,17 @@
 {
   "projects": {
     "default": "kbtechspace-8907"
+  },
+  "targets": {
+    "kbtechspace-8907": {
+      "hosting": {
+        "production": [
+          "kbtechspace-8907"
+        ],
+        "development": [
+          "dev-kbtechspace"
+        ]
+      }
+    }
   }
 }

@@ -15,11 +15,10 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
 
   display: grid;
   justify-content: space-evenly;
-  border-bottom: 1px solid #515556;
   font-size: 11px;
   letter-spacing: 0.07em;
   text-transform: uppercase;
-  padding: 7%;
+  padding: 14%;
   text-align: center;
 
   &-home,
@@ -64,6 +63,7 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
   grid-template-rows: auto auto;
   color: #87969a;
   font-size: 0.6em;
+  margin-bottom: 10px;
 
   .kbts-site-footer-social {
     @include fa-icon;

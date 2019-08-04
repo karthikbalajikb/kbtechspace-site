@@ -1,10 +1,12 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import styled from 'styled-components'
 
 import './side-menu.scss'
 
 const SideMenuFooter = () => (
   <footer className="kbts-site-footer">
+    <FollowMeText>Follow me on</FollowMeText>
     <div className="kbts-site-footer-social">
       <a
         style={{ color: '#153371' }}
@@ -43,8 +45,13 @@ const SideMenuFooter = () => (
         <div className="kbts-site-footer-social-github-icon" />
       </a>
     </div>
-    <div> &copy; 2018 KB TechSpace </div>
   </footer>
 )
 
 export default SideMenuFooter
+
+const FollowMeText = styled.div`
+  font-size: 13px;
+  display: flex;
+  justify-content: center;
+`

@@ -121,9 +121,9 @@ class Resume extends React.Component {
 
               <Ribbon title="Immersive Technology" />
               <SliderList text="Morzilla A-Frame" value="40" />
-              <SliderList text="Vuforia" value="20" />
-              <SliderList text="Google ARCore" value="10" />
-              <SliderList text="Apple ARKit" value="10" />
+              <SliderList text="Vuforia" value="30" />
+              <SliderList text="Google ARCore" value="20" />
+              <SliderList text="Apple ARKit" value="20" />
 
               <Ribbon title="Standards & Patterns" />
               <SliderList text="ES6" value="100" />

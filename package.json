@@ -5,6 +5,7 @@
   "author": "Karthik Balaji <karthik.akb009@gmail.com>",
   "dependencies": {
     "@sentry/browser": "^5.1.1",
+    "babel-plugin-styled-components": "^1.10.6",
     "gatsby": "^2.0.17",
     "gatsby-image": "^2.0.13",
     "gatsby-link": "^2.0.3",
@@ -14,6 +15,7 @@
     "gatsby-plugin-react-helmet": "^3.0.0",
     "gatsby-plugin-sass": "^2.0.1",
     "gatsby-plugin-sharp": "^2.0.5",
+    "gatsby-plugin-styled-components": "^3.1.2",
     "gatsby-plugin-typography": "^2.2.0",
     "gatsby-remark-prismjs": "^3.0.1",
     "gatsby-source-filesystem": "^2.0.1",
@@ -27,6 +29,7 @@
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.13",
+    "styled-components": "^4.3.2",
     "typography": "^0.16.17",
     "typography-theme-grand-view": "^0.15.10"
   },
@@ -44,7 +47,10 @@
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy:dev": "yarn build && firebase deploy --only hosting:development",
+    "deploy:prod": "yarn build && firebase deploy --only hosting:production",
+    "deploy:all": "yarn build && firebase deploy"
   },
   "devDependencies": {
     "node-sass": "^4.9.3",
