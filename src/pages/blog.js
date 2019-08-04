@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Layout from '../components';
+import Layout from '../components'
 import PageHeader from '../components/page-header/page-header'
 import BlogCard from '../components/BlogCard/blog-card'
 import Card from '../components/Card/Card'
@@ -11,19 +11,26 @@ const Blog = ({
   data: {
     allMarkdownRemark: { edges },
     headerImage: { sizes },
+    kbImage,
   },
 }) => {
   return (
     <Layout pathname={'/blog/'}>
-    <section>
-      <PageHeader title="blog" logo="fas fa-newspaper" />
-      {/* <BlogCard edges={edges} /> */}
-      <section className="kbts-page-blog">
-        {edges
-          .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
-          .map(edge => <Card logo={sizes} key={edge.node.id} post={edge.node}  />   )}
+      <section>
+        <PageHeader title="blog" logo="fas fa-newspaper" />
+        <section className="kbts-page-blog">
+          {edges
+            .filter(edge => !!edge.node.frontmatter.date) // You can filter your posts based on some criteria
+            .map(edge => (
+              <Card
+                logo={sizes}
+                authorImage={kbImage.sizes}
+                key={edge.node.id}
+                post={edge.node}
+              />
+            ))}
+        </section>
       </section>
-    </section>
     </Layout>
   )
 }
@@ -47,7 +54,13 @@ export const BlogPageQuery = graphql`
       }
     }
 
-    headerImage: imageSharp(fluid: {originalName: {regex: "/logo/"}}) {
+    headerImage: imageSharp(fluid: { originalName: { regex: "/logo/" } }) {
+      sizes(maxWidth: 1240) {
+        ...GatsbyImageSharpSizes
+      }
+    }
+
+    kbImage: imageSharp(fluid: { originalName: { regex: "/kb-gixxer/" } }) {
       sizes(maxWidth: 1240) {
         ...GatsbyImageSharpSizes
       }

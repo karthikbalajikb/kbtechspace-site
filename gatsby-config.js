@@ -50,7 +50,7 @@ module.exports = {
         background_color: '#0c498a',
         theme_color: '#540a2f',
         display: 'standalone',
-        icon: 'assets/logo2.jpg', // This path is relative to the root of the site.
+        icon: 'assets/logo.jpg', // This path is relative to the root of the site.
       },
     },
     {
