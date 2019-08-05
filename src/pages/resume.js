@@ -1,12 +1,14 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
+import styled from 'styled-components'
 
 import Layout from '../components'
 import PageHeader from '../components/page-header/page-header'
 import StepperList from '../components/stepper-list/stepper-list'
 import SliderList from '../components/SliderList/slider-list'
 import Ribbon from '../components/Ribbon/ribbon'
+import Button from '../components/Button'
 
 import favicon from '../../assets/logo.jpg'
 import '../pageCSS/resume.scss'
@@ -108,6 +110,16 @@ class Resume extends React.Component {
             />
             <html lang="en" />
           </Helmet>
+          <FixedDownloadButton>
+            <Button
+              label="Download"
+              onClick={() =>
+                window.open(
+                  'https://firebasestorage.googleapis.com/v0/b/kbtechspace-8907.appspot.com/o/KnowAboutKB.pdf?alt=media&token=690a5e2c-19f3-43c0-a50f-122a65ae7ac7'
+                )
+              }
+            />
+          </FixedDownloadButton>
           <PageHeader title="resume" logo="fas fa-id-card-alt" />
           <div className="kbts-page-resume-content">
             <StepperList title="WORK HISTORY" icon="fa-laptop" jobs={jobs} />
@@ -159,3 +171,9 @@ class Resume extends React.Component {
 }
 
 export default Resume
+
+const FixedDownloadButton = styled.div`
+  position: absolute;
+  right: 50px;
+  top: 29px;
+`
