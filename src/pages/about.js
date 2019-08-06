@@ -13,7 +13,7 @@ const About = ({ data }) => (
   <section className="kbts-page-about">
     <PageHeader title="about me" logo="fas fa-user-secret" />
     <div className="kbts-page-about-ribbon">
-      <Ribbon title="Services" />
+      <Ribbon title="I Can Help You With" />
     </div>
     <section className="kbts-page-about-service">
       {data.allAboutJson.edges.map(d => <ServiceCard data={d.node} />)}
