@@ -1,26 +1,22 @@
 [
   {
     "title": "Progressive web Apps",
-    "description":
-      "Will help you to make your online presence better with my own way of styling and combining your thoughts",
-      "icon" : "462678.png"
+    "description": "(ReactJS, Gatsby, NextJS, Angular)",
+    "icon": "462678.png"
   },
   {
     "title": "Hybrid Mobile Apps",
-    "description":
-      "Will help you to make your online presence better with my own way of styling and combining your thoughts",
-      "icon" : "hybrid-slider.png"
+    "description": "(React Native, Ionic Framework, Cordova)",
+    "icon": "hybrid-slider.png"
   },
   {
     "title": "AR/VR Apps",
-    "description":
-      "Will help you to make your online presence better with my own way of styling and combining your thoughts",
-      "icon" : "vr-man.png"
+    "description": "(Vuforia, ARCore, Aframe)",
+    "icon": "vr-man.png"
   },
   {
     "title": "Chat Bots",
-    "description":
-      "Will help you to make your online presence better with my own way of styling and combining your thoughts",
-      "icon" : "chatbot_tebot.png"
+    "description": "(IBM Watson)",
+    "icon": "chatbot_tebot.png"
   }
 ]

@@ -18,26 +18,30 @@ const jobs = [
     duration: 'November 2018 - CURRENT',
     role: 'Software Engineer - Front End',
     company: 'Auzmor',
-    description: 'Passion alone drive me',
+    description: 'Working on building rich user interface components for a LMS SaaS Product (Auzmor Learn)',
+    link: 'https://learn.auzmor.com/',
     markCurrent: true,
   },
   {
     duration: 'July 2018 - November 2018',
     role: 'Technology Analyst',
     company: 'Infosys',
-    description: 'Passion alone drive me',
+    description:
+      'Architected context setting and propagation library (CRUST) , which helps in propagating the context data between different tabs and across domains (since different projects run on different sub domain)',
   },
   {
     duration: 'May 2017 - July 2018',
     role: 'Senior System Engineer',
     company: 'Infosys',
-    description: 'Passion alone drive me',
+    description: `Architected entire re-write of legacy FINDER widget library using vanilla javascript and CSS without any library dependency, 14 widgets which gets data from 3 upstream data store and serves 25+ downstream applications across different projects .
+     Worked on entire front end from scratch for E-Statement application which helps to retrieve monthly/annual statement . `,
   },
   {
     duration: 'May 2015 - May 2017',
     role: 'System Engineer',
     company: 'Infosys',
-    description: 'Passion alone drive me',
+    description:
+      'Responsible for maintenance, enhancement for FINDER widgets library toolkit and its APIs. Feed Migration tool , started as a POC which in later time approved as a billable project by client . Since we automated the manual process which saved many dollars for the client ',
   },
   {
     duration: '2016 - 2017',
@@ -143,6 +147,8 @@ class Resume extends React.Component {
 
               <Ribbon title="Cloud" />
               <SliderList text="Amazon web services" value="70" />
+              <SliderList text="Firebase" value="50" />
+              <SliderList text="Google Cloud Platform" value="30" />
 
               <Ribbon title="Build tools" />
               <SliderList text="Webpack" value="100" />

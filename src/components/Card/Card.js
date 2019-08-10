@@ -80,7 +80,7 @@ const Container = styled.div`
   box-shadow: 0px 0px 4px 2px #e1e6e8;
   height: 365px;
   max-height: 400px;
-  width: 345px;
+  /* width: 345px; */
   border-radius: 7px;
 
   &:hover {
