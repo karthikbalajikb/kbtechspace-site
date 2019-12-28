@@ -3,7 +3,7 @@
   position: absolute;
   z-index: 1;
   bottom: 0;
-  color: #303b41;
+  color: white;
   font-size: 150%;
   text-align: center;
   display: grid;
@@ -14,9 +14,9 @@
 
   &-text-1 {
     margin: 0;
+    font-style: italic;;
   }
   &-text-2 {
     font-size: 200%;
-    letter-spacing: -4px;
   }
 }

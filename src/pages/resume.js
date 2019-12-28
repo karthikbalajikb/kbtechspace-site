@@ -10,7 +10,7 @@ import SliderList from '../components/SliderList/slider-list'
 import Ribbon from '../components/Ribbon/ribbon'
 import Button from '../components/Button'
 
-import favicon from '../../assets/logo.jpg'
+import favicon from '../../assets/logo.png'
 import '../pageCSS/resume.scss'
 
 const jobs = [
@@ -119,7 +119,7 @@ class Resume extends React.Component {
               label="Download"
               onClick={() =>
                 window.open(
-                  'https://firebasestorage.googleapis.com/v0/b/kbtechspace-8907.appspot.com/o/KnowAboutKB.pdf?alt=media&token=690a5e2c-19f3-43c0-a50f-122a65ae7ac7'
+                  'https://firebasestorage.googleapis.com/v0/b/kbtechspace-8907.appspot.com/o/know_about_kb_2020.pdf?alt=media&token=8ce12eff-5f26-4351-9ecb-bf148b2e407b'
                 )
               }
             />

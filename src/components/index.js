@@ -6,7 +6,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import SideMenu from './side-menu/side-menu'
 import Header from './header'
 import './index.scss'
-import favicon from '../../assets/logo.jpg'
+import favicon from '../../assets/logo.png'
 import 'prismjs/themes/prism-tomorrow.css'
 
 // const toggleSideMenu = () => {}
