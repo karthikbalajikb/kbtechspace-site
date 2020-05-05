@@ -24,12 +24,13 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
   &-home,
   &-about,
   &-blog,
-  &-resume {
+  &-resume,
+  &-dashboard {
     display: grid;
     text-decoration: none;
     color: #babebf85;
 
-    &.active{
+    &.active {
       color: #ffffffdb;
     }
   }
@@ -37,7 +38,8 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
   &-home-icon,
   &-about-icon,
   &-blog-icon,
-  &-resume-icon {
+  &-resume-icon,
+  &-dashboard-icon {
     @extend .fas;
     padding-bottom: 4px;
     font-size: large;
@@ -55,7 +57,9 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
   &-resume-icon:before {
     content: fa-content($fa-var-id-card-alt);
   }
-
+  &-dashboard-icon:before {
+    content: fa-content($fa-var-tachometer-alt);
+  }
 }
 
 .kbts-site-footer {
@@ -105,6 +109,6 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
   grid-template-columns: 120px;
   grid-template-rows: auto 1fr auto;
   background-color: #1c262b;
-  z-index:2;
-  box-shadow: 5px 0px 13px 1px rgba(0,0,0,0.34);
+  z-index: 2;
+  box-shadow: 5px 0px 13px 1px rgba(0, 0, 0, 0.34);
 }

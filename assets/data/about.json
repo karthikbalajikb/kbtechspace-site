@@ -2,21 +2,21 @@
   {
     "title": "Progressive web Apps",
     "description": "(ReactJS, Gatsby, NextJS, Angular)",
-    "icon": "462678.png"
+    "icon": "progressive_app.svg"
   },
   {
     "title": "Hybrid Mobile Apps",
     "description": "(React Native, Ionic Framework, Cordova)",
-    "icon": "hybrid-slider.png"
+    "icon": "mobile_pay.svg"
   },
   {
     "title": "AR/VR Apps",
     "description": "(Vuforia, ARCore, Aframe)",
-    "icon": "vr-man.png"
+    "icon": "virtual_reality.svg"
   },
   {
     "title": "Chat Bots",
     "description": "(IBM Watson)",
-    "icon": "chatbot_tebot.png"
+    "icon": "chat_bot.svg"
   }
 ]
