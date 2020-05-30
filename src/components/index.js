@@ -32,6 +32,7 @@ class Layout extends React.Component {
     super(props)
     this.state = {
       sideMenu: 'closed',
+      theme: 'light', // dark
     }
   }
 
@@ -69,7 +70,7 @@ class Layout extends React.Component {
       <StaticQuery
         query={query}
         render={data => (
-          <ThemeProvider theme={theme.light}>
+          <ThemeProvider theme={theme[this.state.theme]}>
             <div>
               <Helmet
                 title={data.site.siteMetadata.title}

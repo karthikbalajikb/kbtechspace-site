@@ -103,7 +103,7 @@ export const BlogPageQuery = graphql`
       }
     }
 
-    kbImage: imageSharp(fluid: { originalName: { regex: "/kb-gixxer/" } }) {
+    kbImage: imageSharp(fluid: { originalName: { regex: "/karthikbalaji_transparent/" } }) {
       sizes(maxWidth: 1240) {
         ...GatsbyImageSharpSizes
       }

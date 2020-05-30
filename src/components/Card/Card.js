@@ -20,7 +20,7 @@ const Card = ({
   publishedDate,
   link,
   siteLogo,
-  readTime
+  readTime,
 }) => (
   <Container>
     <ImageSection>
@@ -47,7 +47,9 @@ const Card = ({
     <InfoSection>
       <AuthorName>{authorName}</AuthorName>
       <PostTitle>{truncate(title, { length: 60 })}</PostTitle>
-        <PostDate>{moment(publishedDate).format('ll')} • {readTime} read</PostDate>
+      <PostDate>
+        {moment(publishedDate).format('ll')} • {readTime} read
+      </PostDate>
     </InfoSection>
   </Container>
 )
@@ -84,7 +86,7 @@ const Container = styled.div`
   box-shadow: 1px 0px 19px 5px #eef2f7;
 
   &:hover {
-    box-shadow: 0px 0px 16px 6px #e1e6e8
+    box-shadow: 0px 0px 16px 6px #e1e6e8;
   }
 `
 
@@ -134,9 +136,11 @@ const AuthorName = styled.div`
 `
 
 const PostTitle = styled.div`
-  padding: 20px 0px 4px 0px;
   font-weight: bold;
   grid-row: 3;
+  color: ${({ theme }) => `${theme.secondary.main}`};
+  font-size: 15px;
+  padding: 0 15px;
 `
 
 const PostDate = styled.div`

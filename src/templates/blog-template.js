@@ -102,13 +102,19 @@ export default function Template({
       <div className="blog__post__container">
         <div className="blog__post">
           <h1 className="blog__post__title">{frontmatter.title}</h1>
-          <p className="blog__post__date">{frontmatter.publishedDate}</p>
           <div className="blog__post__tags">
             {frontmatter.tags.map(d => (
               <p className="blog__post__tags__text">{d}</p>
             ))}
           </div>
-          <PostContent dangerouslySetInnerHTML={{ __html: html }} />
+          <PostContainer>
+            <BlogInfoStrip>
+              <StyledAvatar src="https://media-exp1.licdn.com/dms/image/C5603AQE4w0vZE_u-Yg/profile-displayphoto-shrink_100_100/0?e=1596067200&v=beta&t=yO2uQI8vlGZRdHQLhwtkPc4ZOw5yknpwbRi_M0he6Qc" />
+              <Name>Karthik Balaji</Name>
+              <Metadata>{frontmatter.publishedDate} • {frontmatter.readTime} ({frontmatter.wordCount} words)</Metadata>
+            </BlogInfoStrip>
+            <PostContent dangerouslySetInnerHTML={{ __html: html }} />
+          </PostContainer>
         </div>
       </div>
       <DiscussionWrapper>
@@ -123,22 +129,34 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
-        publishedDate(formatString: "MMMM DD, YYYY")
-        updatedDate(formatString: "MMMM DD, YYYY")
+        publishedDate(formatString: "MMM DD, YYYY")
+        updatedDate(formatString: "MMM DD, YYYY")
         path
         title
         tags
         thumbnail
         slug
+        readTime
+        wordCount
       }
     }
   }
 `
+const PostContainer = styled.div`
+  padding: 10px 15px 7px;
+  margin-top: 15px;
+  border-radius: 4px;
+  box-shadow: 0 0 16px 0 rgba(48, 63, 80, 0.05);
+  background: #fff;
+`
+
 const PostContent = styled.div`
+  margin-top: 10px;
   p {
     font-size: medium;
     line-height: 1.7em;
   }
+
   :not(pre) > code[class*='language-'],
   pre[class*='language-'] {
     background: ${({ theme }) => `${theme.secondary.main}`};
@@ -156,4 +174,37 @@ const PostContent = styled.div`
 
 const DiscussionWrapper = styled.div`
   padding: 10% 15%;
-`;
+`
+
+const BlogInfoStrip = styled.div`
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  height: 60px;
+  background-color: white;
+  grid-column-gap: 10px;
+`
+
+const StyledAvatar = styled.img`
+  grid-column: 1;
+  grid-row: span 2;
+  width: 40px;
+  height: 40px;
+  margin-bottom: 0px;
+  justify-self: center;
+  align-self: center;
+`
+
+const Name = styled.div`
+  grid-column: 2;
+  grid-row: 1;
+  align-self: flex-end;
+  font-size: 14px;
+`
+
+const Metadata = styled.div`
+  grid-column: 2;
+  grid-row: 2;
+  font-size: 12px;
+  color: #5c708a;
+`
