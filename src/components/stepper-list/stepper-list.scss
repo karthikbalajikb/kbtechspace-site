@@ -1,5 +1,5 @@
 .kbts-stepper-list {
-  padding: 40px;
+  padding: 20px 40px;
   position: relative;
 
   &:before {
@@ -39,6 +39,8 @@
 .kbts-stepper-list-item {
   position: relative;
   padding: 0 1em 2em 2.4em;
+  letter-spacing: 0.4px;
+  line-height: 28px;
 
   &:after {
     content: '';

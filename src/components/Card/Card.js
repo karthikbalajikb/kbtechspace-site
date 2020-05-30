@@ -1,98 +1,110 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
+import moment from 'moment'
+import truncate from 'lodash/truncate'
 
 import PostLink from '../PostLink/post-link'
 import './Card.scss'
 
-const getDay = d => {
-  const dateArr = d.split(' ')
-  const date = dateArr[1].substr(0, 2)
-  return date
-}
+const THUMBNAIL_HEIGHT = 200
 
-const getMonth = d => {
-  const dateArr = d.split(' ')
-  const month = dateArr[0].substr(0, 3)
-  return month
-}
-
-// const Card = props => (
-//   <article className="kbts-card">
-//     <div className="kbts-card-image">
-//       {props.post.frontmatter.banner === '' ||
-//       props.post.frontmatter.banner === null ? (
-//         <Img sizes={props.logo} alt="KBTechSpace.com" />
-//       ) : (
-//         <img src={props.post.frontmatter.banner} alt="test" />
-//       )}
-
-//       {/* <Img sizes={props.logo} alt="KBTechSpace.com" /> */}
-//       <div className="kbts-card-image-link">
-//         <PostLink key={props.key} post={props.post} />
-//       </div>
-//     </div>
-//     <div className="kbts-card-title">
-//       <span className="kbts-card-title-date">
-//         <span>{getDay(props.post.frontmatter.date)}</span>{getMonth(props.post.frontmatter.date)}
-//       </span>
-//       <p>{props.post.frontmatter.title}</p>
-//     </div>
-//   </article>
-// )
-
-const Card = props => (
+const Card = ({
+  id,
+  origin,
+  authorImage,
+  authorName,
+  title,
+  thumbnail,
+  publishedDate,
+  link,
+  siteLogo,
+  readTime
+}) => (
   <Container>
     <ImageSection>
-      {props.post.frontmatter.banner === '' ||
-      props.post.frontmatter.banner === null ? (
-        <Img
-          sizes={props.logo}
-          alt="KBTechSpace.com"
-          style={{ height: 'inherit' }}
-        />
-      ) : (
-        <img src={props.post.frontmatter.banner} alt="test" />
-      )}
-      <PostLink key={props.key} post={props.post} />
+      <ImageWrapper>
+        {siteLogo ? (
+          <Img
+            sizes={siteLogo}
+            alt="KBTechSpace.com"
+            style={{ height: 'inherit' }}
+          />
+        ) : (
+          <StyledImage src={thumbnail} alt="test" />
+        )}
+      </ImageWrapper>
+      <PostLink key={id} origin={origin} link={link} />
     </ImageSection>
     <AuthorLogo>
       <Img
-        sizes={props.authorImage}
-        alt="test"
+        sizes={authorImage}
+        alt="karthik balaji"
         style={{ height: 'inherit', borderRadius: '60px' }}
       />
     </AuthorLogo>
     <InfoSection>
-      <AuthorName>by Karthik Balaji</AuthorName>
-      <PostTitle>{props.post.frontmatter.title}</PostTitle>
-      <PostDate>{props.post.frontmatter.date}</PostDate>
+      <AuthorName>{authorName}</AuthorName>
+      <PostTitle>{truncate(title, { length: 60 })}</PostTitle>
+        <PostDate>{moment(publishedDate).format('ll')} • {readTime} read</PostDate>
     </InfoSection>
   </Container>
 )
 
+Card.propTypes = {
+  id: PropTypes.number.isRequired,
+  origin: PropTypes.oneOf(['medium', 'kb-techspace', 'pulse']).isRequired,
+  authorImage: PropTypes.any.isRequired,
+  authorName: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  thumbnail: PropTypes.string.isRequired,
+  publishedDate: PropTypes.string.isRequired,
+  updatedDate: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  tags: PropTypes.array.isRequired,
+  html: PropTypes.any,
+  slug: PropTypes.string.isRequired,
+  siteLogo: PropTypes.any,
+  readTime: PropTypes.string,
+}
+
+Card.defaultProps = {
+  siteLogo: null,
+  html: null,
+  readTime: null,
+}
+
 export default Card
 
 const Container = styled.div`
+  display: grid;
+  grid-template-rows: 1fr 1fr;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0px 0px 4px 2px #e1e6e8;
-  height: 365px;
-  max-height: 400px;
-  /* width: 345px; */
-  border-radius: 7px;
+  box-shadow: 1px 0px 19px 5px #eef2f7;
 
   &:hover {
-    box-shadow: 0px 0px 4px 6px #e1e6e8;
+    box-shadow: 0px 0px 16px 6px #e1e6e8
   }
 `
 
 const ImageSection = styled.div`
-  height: 200px;
-  max-height: 200px;
+  display: grid;
+  height: ${() => `${THUMBNAIL_HEIGHT}px`};
+  max-height: ${() => `${THUMBNAIL_HEIGHT}px`};
   background-color: white;
   border-bottom: 1px solid white;
+`
+
+const ImageWrapper = styled.div`
+  height: ${() => `${THUMBNAIL_HEIGHT}px`};
+  grid-column: 1;
+  grid-row: 1;
+`
+
+const StyledImage = styled.img`
+  height: ${() => `${THUMBNAIL_HEIGHT}px`};
+  object-fit: contain;
 `
 
 const AuthorLogo = styled.div`
@@ -110,20 +122,25 @@ const AuthorLogo = styled.div`
 `
 
 const InfoSection = styled.div`
-  margin-top: 43px;
+  display: grid;
+  grid-template-rows: 3rem auto auto auto;
+  background-color: ${({ theme }) => `${theme.primary.main}`};
 `
 
 const AuthorName = styled.div`
   font-size: 13px;
   color: #999;
+  grid-row: 2;
 `
 
 const PostTitle = styled.div`
   padding: 20px 0px 4px 0px;
   font-weight: bold;
+  grid-row: 3;
 `
 
 const PostDate = styled.div`
   font-size: 13px;
   color: #999;
+  grid-row: 4;
 `

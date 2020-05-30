@@ -1,7 +1,9 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import styled from 'styled-components'
+import { DiscussionEmbed } from 'disqus-react'
 
-import Layout from '../components';
+import Layout from '../components'
 import './blog-template.scss'
 
 export default function Template({
@@ -19,12 +21,12 @@ export default function Template({
     headline: `${frontmatter.title}`,
     image: {
       '@type': 'ImageObject',
-      url: `${frontmatter.banner}`,
+      url: `${frontmatter.thumbnail}`,
       height: 630,
       width: 1200,
     },
-    datePublished: `${frontmatter.date}`,
-    dateModified: `${frontmatter.date}`,
+    datePublished: `${frontmatter.publishedDate}`,
+    dateModified: `${frontmatter.updatedDate}`,
     author: {
       '@type': 'Person',
       name: 'Karthik Balaji',
@@ -42,6 +44,11 @@ export default function Template({
     },
     description: `${frontmatter.title}`,
   })
+
+  const disqusConfig = {
+    shortname: 'kbtechspace-1',
+    config: { identifier: frontmatter.slug, title: frontmatter.title },
+  }
   return (
     <Layout pathname={'/blog/'}>
       <Helmet
@@ -74,7 +81,7 @@ export default function Template({
           },
           {
             property: 'og:image',
-            content: `${frontmatter.banner}`,
+            content: `${frontmatter.thumbnail}`,
           },
           {
             property: 'og:description',
@@ -95,19 +102,18 @@ export default function Template({
       <div className="blog__post__container">
         <div className="blog__post">
           <h1 className="blog__post__title">{frontmatter.title}</h1>
-          <p className="blog__post__date">{frontmatter.date}</p>
+          <p className="blog__post__date">{frontmatter.publishedDate}</p>
           <div className="blog__post__tags">
             {frontmatter.tags.map(d => (
               <p className="blog__post__tags__text">{d}</p>
             ))}
           </div>
-          <div
-            className="blog__post__content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
+          <PostContent dangerouslySetInnerHTML={{ __html: html }} />
         </div>
       </div>
-    
+      <DiscussionWrapper>
+        <DiscussionEmbed {...disqusConfig} />
+      </DiscussionWrapper>
     </Layout>
   )
 }
@@ -117,12 +123,37 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
-        date(formatString: "MMMM DD, YYYY")
+        publishedDate(formatString: "MMMM DD, YYYY")
+        updatedDate(formatString: "MMMM DD, YYYY")
         path
         title
         tags
-        banner
+        thumbnail
+        slug
       }
     }
   }
 `
+const PostContent = styled.div`
+  p {
+    font-size: medium;
+    line-height: 1.7em;
+  }
+  :not(pre) > code[class*='language-'],
+  pre[class*='language-'] {
+    background: ${({ theme }) => `${theme.secondary.main}`};
+  }
+
+  .language-text {
+    padding: 0.2em 0.3em;
+  }
+
+  .language-javascript,
+  .language-css {
+    font-size: 16px;
+  }
+`
+
+const DiscussionWrapper = styled.div`
+  padding: 10% 15%;
+`;

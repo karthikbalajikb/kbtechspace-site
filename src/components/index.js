@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
+import { ThemeProvider } from 'styled-components';
 
 import SideMenu from './side-menu/side-menu'
 import Header from './header'
@@ -9,64 +10,7 @@ import './index.scss'
 import favicon from '../../assets/logo.png'
 import 'prismjs/themes/prism-tomorrow.css'
 
-// const toggleSideMenu = () => {}
-
-// export const Layout = ({ children, pathname }) => (
-//   <StaticQuery
-//     query={graphql`
-//       query SiteQuery {
-//         site {
-//           siteMetadata {
-//             title
-//           }
-//         }
-//         headerImage: imageSharp(fluid: {originalName: {regex: "/logo/"}}) {
-//           sizes(maxWidth: 1240) {
-//             ...GatsbyImageSharpSizes
-//           }
-//         }
-//       }
-//     `}
-//     render={data => (
-//       <div className="kbts-site-container">
-//         <SideMenu
-//           logo={data.headerImage.sizes}
-//           pathname={pathname}
-//           toggleSideMenu={toggleSideMenu}
-//         />
-//         <section className="kbts-site-main">
-//           <header className="kbts-site-header">
-//             <a id="kbts-sidemenu-btn" className="kbts-site-header-menu" />
-//             <a className="kbts-site-header-text">KB TECHSPACE</a>
-//           </header>
-//           <main className="site-main-content">{children}</main>
-//         </section>
-//       </div>
-//     )}
-//   />
-// )
-
-// Layout.propTypes = {
-//   children: PropTypes.func,
-// }
-
-// export default Layout
-
-// export const query = graphql`
-//   query SiteQuery {
-//     site {
-//       siteMetadata {
-//         title
-//       }
-//     }
-
-//     headerImage: imageSharp(id: { regex: "/logo/" }) {
-//       sizes(maxWidth: 1240) {
-//         ...GatsbyImageSharpSizes
-//       }
-//     }
-//   }
-// `
+import { theme } from '../utils/theme';
 
 export const query = graphql`
   query SiteQuery {
@@ -125,43 +69,45 @@ class Layout extends React.Component {
       <StaticQuery
         query={query}
         render={data => (
-          <div>
-            <Helmet
-              title={data.site.siteMetadata.title}
-              meta={[
-                { name: 'description', content: 'Blog' },
-                {
-                  name: 'keywords',
-                  content: 'Blog, Javascript, ES6, Learn, Guide, Personal,',
-                },
-                {
-                  name: 'theme-color',
-                  content: '#540a2f',
-                },
-                {
-                  name: 'google-site-verification',
-                  content: 'hWW4kdk43dHsMIBS9TbQF0dD0AHI7IBzcMM1K4sEOmI',
-                }
-              ]}
-              link={[
-                { rel: 'shortcut icon', type: 'image/jpg', href: `${favicon}` },
-              ]}
-            />
-            <div className="kbts-site-container">
-              <SideMenu
-                logo={data.headerImage.sizes}
-                pathname={pathname}
-                toggleSideMenu={this.toggleSideMenu}
+          <ThemeProvider theme={theme.light}>
+            <div>
+              <Helmet
+                title={data.site.siteMetadata.title}
+                meta={[
+                  { name: 'description', content: 'Blog' },
+                  {
+                    name: 'keywords',
+                    content: 'Blog, Javascript, ES6, Learn, Guide, Personal,',
+                  },
+                  {
+                    name: 'theme-color',
+                    content: '#540a2f',
+                  },
+                  {
+                    name: 'google-site-verification',
+                    content: 'hWW4kdk43dHsMIBS9TbQF0dD0AHI7IBzcMM1K4sEOmI',
+                  }
+                ]}
+                link={[
+                  { rel: 'shortcut icon', type: 'image/jpg', href: `${favicon}` },
+                ]}
               />
-              <section className="kbts-site-main">
-                <header className="kbts-site-header">
-                  <a id="kbts-sidemenu-btn" className="kbts-site-header-menu" />
-                  <a className="kbts-site-header-text">KB TECHSPACE</a>
-                </header>
-                <main className="site-main-content">{this.props.children}</main>
-              </section>
+              <div className="kbts-site-container">
+                <SideMenu
+                  logo={data.headerImage.sizes}
+                  pathname={pathname}
+                  toggleSideMenu={this.toggleSideMenu}
+                />
+                <section className="kbts-site-main">
+                  <header className="kbts-site-header">
+                    <a id="kbts-sidemenu-btn" className="kbts-site-header-menu" />
+                    <a className="kbts-site-header-text">KB TECHSPACE</a>
+                  </header>
+                  <main className="site-main-content">{this.props.children}</main>
+                </section>
+              </div>
             </div>
-          </div>
+          </ThemeProvider>
         )}
       />
     )

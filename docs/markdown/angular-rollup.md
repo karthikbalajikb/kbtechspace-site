@@ -1,14 +1,17 @@
 ---
 path: "/blog/react-weather-app"
-date: "2017-11-07"
+slug: "react-weather-app"
+publishedDate: "2017-11-07"
+updatedDate: "2017-11-07"
 title: "React weather app"
-banner: "https://user-images.githubusercontent.com/8594076/36646017-c340bf96-1a97-11e8-99da-d4d5e48ba2e6.png"
+thumbnail: "https://user-images.githubusercontent.com/8594076/36646017-c340bf96-1a97-11e8-99da-d4d5e48ba2e6.png"
 tags: ["react", "jest", "weather app", "open weather api"]
+readTime: "1 min"
 ---
 
 ![wd](https://user-images.githubusercontent.com/8594076/36646017-c340bf96-1a97-11e8-99da-d4d5e48ba2e6.png)
 
-## WD Weather App 
+## WD Weather App
 
 Calculon is gonna kill us and it’s all everybody else’s fault! We’ll need to have a look inside you with this camera. I’m just glad my fat, ugly mama isn’t alive to see this day. Now, now. Perfectly symmetrical violence never solved anything. Morbo can’t understand his teleprompter because he forgot how you say that letter that’s shaped like a man wearing a hat. You’ve killed me! Oh, you’ve killed me!
 

@@ -58,9 +58,10 @@ SSSssshhhhh!! The code starts below --> */}
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
+          <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet" />
           {props.headComponents}
         </head>
-        <body {...props.bodyAttributes}>
+        <body {...props.bodyAttributes} style={{ fontFamily: 'muli !important'}}>
           {props.preBodyComponents}
           <noscript key="noscript" id="gatsby-noscript">
             This app works best with JavaScript enabled.

@@ -1,5 +1,7 @@
 import * as functions from 'firebase-functions';
+const axios = require('axios');
 import { google } from 'googleapis';
+
 import * as dotenv from 'dotenv';
 
 dotenv.config();
@@ -17,7 +19,7 @@ export const helloWorld = functions.https.onRequest((request, response) => {
 });
 
 export const gaPageView = functions.https.onRequest(async (req, response) => {
-    // const { startDate, endDate, metrics } = req.body;
+    const { startDate, endDate, metrics } = req.query;
 
     const analytics = google.analytics('v3');
     const viewId = process.env.VIEW_ID;
@@ -26,15 +28,13 @@ export const gaPageView = functions.https.onRequest(async (req, response) => {
         key: privateKey,
         scopes,
     });
-    // console.log('request>>', request.body)
-    // const { startDate, endDate, metrics } = request.body;
-    // console.log('body: ', startDate, endDate, metrics);
+
     const result = await analytics.data.ga.get({
         auth: jwt,
         ids: `ga:${viewId}`,
-        'start-date': req.query.startDate.toString(),
-        'end-date': req.query.endDate.toString(),
-        metrics: req.query.metrics.toString(),
+        'start-date': startDate.toString(),
+        'end-date': endDate.toString(),
+        metrics: metrics.toString(),
     });
 
     console.log('result :', result);
@@ -42,3 +42,39 @@ export const gaPageView = functions.https.onRequest(async (req, response) => {
     response.set('Access-Control-Allow-Methods', 'GET');
     response.status(200).send({ data: result });
 });
+
+export const linkedInView = functions.https.onRequest(async (request, response) => {
+
+    // Config
+    const clientId = process.env.LINKEDIN_CLIENT_ID;
+    const clientSecret = process.env.LINKEDIN_CLIENT_SECRET;
+
+    const responseData = await axios({
+        method: 'post',
+        url: 'https://www.linkedin.com/oauth/v2/accessToken',
+        data: {
+            grant_type: 'client_credentials',
+            client_id: clientId,
+            client_secret: clientSecret,
+        }
+    });
+
+    console.log('processedResponse >>', responseData)
+
+    // Replace with access token for the r_liteprofile permission
+    const accessToken = 'YOUR_ACCESS_TOKEN';
+    const linkedInData = await axios({
+        method: 'GET',
+        url: 'https://api.linkedin.com/v2/me',
+        headers: {
+            'Authorization': `Bearer ${accessToken}`,
+            'cache-control': 'no-cache',
+            'X-Restli-Protocol-Version': '2.0.0'
+        }
+    });
+
+    console.log("linkedInData >>", linkedInData);
+    response.set('Access-Control-Allow-Origin', '*');
+    response.set('Access-Control-Allow-Methods', 'GET');
+    response.status(200).send({ data: responseData });
+})

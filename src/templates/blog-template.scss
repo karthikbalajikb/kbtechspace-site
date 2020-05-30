@@ -1,5 +1,5 @@
 .blog__post {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'muli';
 
   &__container {
     padding: 0 15%;
@@ -26,7 +26,7 @@
     align-items: baseline;
     justify-content: center;
     flex-wrap: wrap;
-    
+
     &__text{
       margin: 10px;
       padding: 4px 15px;
@@ -37,12 +37,5 @@
       text-transform: uppercase;
       letter-spacing: 1px;
     }
-  }
-}
-
-.blog__post__content {
-  p {
-    font-size: medium;
-    line-height: 1.6em;
   }
 }
