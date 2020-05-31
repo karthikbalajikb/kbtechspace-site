@@ -1,15 +1,16 @@
 import React from 'react'
 import Link from 'gatsby-link'
 import Img from 'gatsby-image'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
+import wallpaperSVG from '../../assets/wallpaper-illustration.svg'
 import Layout from '../components'
 import NameCard from '../components/NameCard/name-card'
 
-const IndexPage = ({ data }) => (
+const IndexPage = () => (
   <Layout pathname={'//'}>
-    <div>
-      <Img sizes={data.headerImage.sizes} className="header-image" />
+    <Container>
+      <StyledWallpaper src={wallpaperSVG} />
       <NameCard
         text_1="Hey, I'm"
         text_2="Karthik Balaji"
@@ -17,27 +18,27 @@ const IndexPage = ({ data }) => (
         text_4="FRONT-END ENGINEER | UI/UX ENTHUSIAST | TECH BLOGGER"
       />
       <Gradient />
-    </div>
+    </Container>
   </Layout>
 )
 
 export default IndexPage
 
-export const query = graphql`
-  query MainWallPaperQuery {
-    headerImage: imageSharp(
-      fluid: { originalName: { regex: "/kb-wallpaper/" } }
-    ) {
-      sizes(maxWidth: 1240) {
-        ...GatsbyImageSharpSizes
-      }
-    }
-  }
+const Container = styled.div`
+  display: grid;
+  grid-template-rows: auto 200px;
 `
+
 const Gradient = styled.div`
-  position: absolute;
-  bottom: 0px;
-  width: 100%;
-  padding: 100px;
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.34));
-`;
+  grid-row: 2;
+  grid-column: 1;
+  background: linear-gradient(rgba(0,0,0,0),rgba(28, 38, 43, 0.12))
+`
+
+const StyledWallpaper = styled.img`
+  width: 74vw;
+  height: calc(100vh - 200px);
+  padding-top: 100px;
+  margin: auto;
+  margin-bottom: 0px;
+`
