@@ -102,7 +102,6 @@ class Layout extends React.Component {
                 <section className="kbts-site-main">
                   <header className="kbts-site-header">
                     <a id="kbts-sidemenu-btn" className="kbts-site-header-menu" />
-                    <a className="kbts-site-header-text">KB TECHSPACE</a>
                   </header>
                   <main className="site-main-content">{this.props.children}</main>
                 </section>

@@ -170,6 +170,15 @@ const PostContent = styled.div`
   .language-css {
     font-size: 16px;
   }
+
+  blockquote {
+    border-left: ${({ theme }) => ` 4px solid ${theme.primary.main}`};
+    background: antiquewhite;
+  }
+
+  blockquote > p {
+    padding-left: 20px;
+  }
 `
 
 const DiscussionWrapper = styled.div`

@@ -27,7 +27,7 @@ body {
 
 @media only screen and (min-width: 760px) {
   .kbts-site-container {
-    grid-template-columns: 120px auto !important; 
+    grid-template-columns: 120px auto !important;
   }
 }
 
@@ -59,14 +59,15 @@ body {
   @include fa-icon;
 
   display: grid;
-  grid-template-columns: 50px auto;
-  background: linear-gradient(to right, #540a2f, #1b010e);
+  grid-template-columns: 50px;
+  background-color: #fcde59;
   height: 50px;
-  grid-column-gap: 30px;
+  width: 50px;
+  margin: 10px;
+  border-radius: 24px;
 
   &-menu {
     @extend .fas;
-    border-right: 1px solid white;
     display: grid;
     justify-content: space-evenly;
     align-content: space-evenly;
@@ -74,7 +75,7 @@ body {
   &-menu:before {
     content: fa-content($fa-var-bars);
     font-size: x-large;
-    color: white;
+    color: #1c262b;
   }
   &-text {
     color: white;

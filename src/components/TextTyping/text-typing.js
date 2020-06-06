@@ -49,4 +49,11 @@ export default TextTyping
 
 const StyledCodeText = styled.code`
   font-size: 1rem;
+  grid-column: span 2;
+  grid-row: 2;
+  justify-self: center;
+
+  @media(max-width: 760px) {
+    display: none;
+  }
 `

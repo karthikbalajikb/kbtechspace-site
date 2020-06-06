@@ -1,12 +1,11 @@
 .kbts-name-card {
   display: grid;
-  grid-row: 2;
-  grid-column: 1;
+  height: 200px;
+  align-self: center;
   z-index: 1;
   text-align: center;
   color: #1c262b;
   font-size: 24px;
-
 
   &-text-1 {
     margin: 0;
@@ -15,9 +14,9 @@
   &-text-2 {
     display: flex;
     justify-content: center;
-    margin: 0;
-    font-size: 2rem;
-    letter-spacing: 4px;
+    font-size: 2.5rem;
+    font-weight: 700;;
+    letter-spacing: 0px;
   }
   &-text-4 {
     display: flex;
@@ -27,30 +26,10 @@
   }
 }
 
-.animated {
-  animation-duration: 2s;
-  animation-fill-mode: both;
-  animation-iteration-count: 1;
-}
 
-@keyframes rubberBand {
-  0% {transform: scale(1);}
-  30% {transform: scaleX(1.25) scaleY(0.75);}
-  40% {transform: scaleX(0.75) scaleY(1.25);}
-  60% {transform: scaleX(1.15) scaleY(0.85);}
-  100% {transform: scale(1);}
-}
-.rubberBand {
-  animation-delay: 1s;
-  animation-name: rubberBand;
-}
-
-@keyframes pulse {
-  0% {transform: scale(1);}
-  50% {transform: scale(1.4);}
-  100% {transform: scale(1); top: 500px;}
-}
-.pulse {
-  animation-name: pulse;
-  animation-duration: 2s;
+@media only screen and (max-width: 760px) {
+  .kbts-name-card-text-2 {
+    font-size: 1.5rem;
+    align-items: baseline;
+  }
 }

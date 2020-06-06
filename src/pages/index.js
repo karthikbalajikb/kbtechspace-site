@@ -6,18 +6,19 @@ import styled from 'styled-components'
 import wallpaperSVG from '../../assets/wallpaper-illustration.svg'
 import Layout from '../components'
 import NameCard from '../components/NameCard/name-card'
+import TextTyping from '../components/TextTyping/text-typing'
 
 const IndexPage = () => (
   <Layout pathname={'//'}>
     <Container>
-      <StyledWallpaper src={wallpaperSVG} />
       <NameCard
         text_1="Hey, I'm"
-        text_2="Karthik Balaji"
-        text_3="Hitting the keyboard hard, Until the magic happens"
-        text_4="FRONT-END ENGINEER | UI/UX ENTHUSIAST | TECH BLOGGER"
+        text_3="Frontend Engineer"
+        text_4="UI/UX Enthusiast"
+        text_5="Tech Blogger"
       />
-      <Gradient />
+      <StyledWallpaper src={wallpaperSVG} />
+      <TextTyping text_3="Hitting the keyboard hard, Until the magic happens" />
     </Container>
   </Layout>
 )
@@ -26,19 +27,23 @@ export default IndexPage
 
 const Container = styled.div`
   display: grid;
-  grid-template-rows: auto 200px;
-`
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  padding: 0px 70px;
+  grid-column-gap: 15%;
 
-const Gradient = styled.div`
-  grid-row: 2;
-  grid-column: 1;
-  background: linear-gradient(rgba(0,0,0,0),rgba(28, 38, 43, 0.12))
+  @media(max-width: 760px) {
+    grid-template-columns: auto;
+    padding: 0px 10px;
+  }
 `
 
 const StyledWallpaper = styled.img`
   width: 74vw;
-  height: calc(100vh - 200px);
-  padding-top: 100px;
+  height: calc(100vh - 100px);
   margin: auto;
-  margin-bottom: 0px;
+
+  @media(max-width: 760px) {
+    height: initial;
+  }
 `
