@@ -7,7 +7,7 @@ const SideMenuContentItem = props => {
   }
 
   const selectedStyle = () => (
-    props.active ? {color: 'rgb(255, 222, 89)'} : { color: '#babebf85'}
+    props.active ? {color: 'rgb(255, 222, 89)'} : { color: '#f2f6f9'}
   );
 
   return (

@@ -11,18 +11,19 @@ const Ribbon = props => {
     threshold: 1.0,
   }
 
-  let observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting) {
-            document.getElementById(`${entry.target.id}`).classList.add('expand');
-        }
-        if(!entry.isIntersecting) {
-            document.getElementById(`${entry.target.id}`).classList.remove('expand');
-        }
-      });
-  }, options)
 
   useEffect(() => {
+    let observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+          if(entry.isIntersecting) {
+              document.getElementById(`${entry.target.id}`).classList.add('expand');
+          }
+          if(!entry.isIntersecting) {
+              document.getElementById(`${entry.target.id}`).classList.remove('expand');
+          }
+        });
+    }, options);
+
     let target = document.getElementById(id);
     console.log('load >>', id, target);
     observer.observe(target);

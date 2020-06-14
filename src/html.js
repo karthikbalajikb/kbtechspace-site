@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 export default function HTML(props) {
   return (
     <React.Fragment>
-{/*
+      {/*
 ██╗  ██╗███████╗██╗     ██╗      ██████╗     ██╗    ██╗ ██████╗ ██████╗ ██╗     ██████╗
 ██║  ██║██╔════╝██║     ██║     ██╔═══██╗    ██║    ██║██╔═══██╗██╔══██╗██║     ██╔══██╗
 ███████║█████╗  ██║     ██║     ██║   ██║    ██║ █╗ ██║██║   ██║██████╔╝██║     ██║  ██║
@@ -13,7 +13,7 @@ export default function HTML(props) {
 ╚═╝  ╚═╝╚══════╝╚══════╝╚══════╝ ╚═════╝      ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═════╝
 
 Greetings ! */}
-{/*
+      {/*
 if (employer) {
   yes, I'm always looking for great opportunities;
 }
@@ -30,7 +30,7 @@ else if (geek) {
 else {
   goto: https://kbtechspace.com/404
 } */}
-{/* ________________________________________________________________________________________
+      {/* ________________________________________________________________________________________
 
 When I wrote this code, only God and I understood what I was doing
 Now, God only knows
@@ -50,7 +50,7 @@ ________________________________________________________________________________
 
 SSSssshhhhh!! The code starts below --> */}
 
-      <html {...props.htmlAttributes} class="fuck">
+      <html {...props.htmlAttributes} class="fuck" lang="en">
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="x-ua-compatible" content="ie=edge" />
@@ -58,10 +58,16 @@ SSSssshhhhh!! The code starts below --> */}
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
-          <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet" />
+          <link
+            rel="preconnect"
+            href="https://fonts.googleapis.com/css?family=Muli&display=swap"
+          />
           {props.headComponents}
         </head>
-        <body {...props.bodyAttributes} style={{ fontFamily: 'muli !important'}}>
+        <body
+          {...props.bodyAttributes}
+          style={{ fontFamily: 'muli !important' }}
+        >
           {props.preBodyComponents}
           <noscript key="noscript" id="gatsby-noscript">
             This app works best with JavaScript enabled.

@@ -55,7 +55,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "deploy:dev": "yarn build && firebase deploy --only hosting:development",
     "deploy:prod": "yarn build && firebase deploy --only hosting:production",
-    "deploy:dev:prod": "yarn build && firebase deploy --only hosting",
+    "deploy:webapp:all": "yarn build && firebase deploy --only hosting",
     "deploy:all": "yarn build && firebase deploy"
   },
   "devDependencies": {

@@ -17,7 +17,7 @@ const IndexPage = () => (
         text_4="UI/UX Enthusiast"
         text_5="Tech Blogger"
       />
-      <StyledWallpaper src={wallpaperSVG} />
+      <StyledWallpaper src={wallpaperSVG}  alt="kb-wallpaper" />
       <TextTyping text_3="Hitting the keyboard hard, Until the magic happens" />
     </Container>
   </Layout>

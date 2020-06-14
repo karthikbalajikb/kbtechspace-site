@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 const NotFoundPage = ({ data }) => (
   <Container>
-    <Img sizes={data.notFoundImage.sizes} />
+    <Img sizes={data.notFoundImage.sizes} alt="404" />
     <p style={{ marginTop: 20 }}>
       If you liked to go in a right way ... Click the link {' '}
       <a href="https://kbtechspace.com">kbtechspace</a>

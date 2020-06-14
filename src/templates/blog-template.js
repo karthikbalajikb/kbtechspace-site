@@ -109,7 +109,7 @@ export default function Template({
           </div>
           <PostContainer>
             <BlogInfoStrip>
-              <StyledAvatar src="https://media-exp1.licdn.com/dms/image/C5603AQE4w0vZE_u-Yg/profile-displayphoto-shrink_100_100/0?e=1596067200&v=beta&t=yO2uQI8vlGZRdHQLhwtkPc4ZOw5yknpwbRi_M0he6Qc" />
+              <StyledAvatar src="https://media-exp1.licdn.com/dms/image/C5603AQE4w0vZE_u-Yg/profile-displayphoto-shrink_100_100/0?e=1596067200&v=beta&t=yO2uQI8vlGZRdHQLhwtkPc4ZOw5yknpwbRi_M0he6Qc" alt="kb" />
               <Name>Karthik Balaji</Name>
               <Metadata>{frontmatter.publishedDate} • {frontmatter.readTime} ({frontmatter.wordCount} words)</Metadata>
             </BlogInfoStrip>

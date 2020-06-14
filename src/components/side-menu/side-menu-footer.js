@@ -12,6 +12,7 @@ const SideMenuFooter = () => (
         style={{ color: '#153371' }}
         href="https://www.facebook.com/karthik.balaji.7121"
         target="_blank"
+        rel="noopener"
       >
         <div className="kbts-site-footer-social-fb-icon" />
       </a>
@@ -20,6 +21,7 @@ const SideMenuFooter = () => (
         style={{ color: '#9C27B0' }}
         href="https://www.instagram.com/kb_gixxer/"
         target="_blank"
+        rel="noopener"
       >
         <div className="kbts-site-footer-social-insta-icon" />
       </a>
@@ -27,6 +29,7 @@ const SideMenuFooter = () => (
         style={{ color: '#2196F3' }}
         href="https://twitter.com/karthikbalaji99"
         target="_blank"
+        rel="noopener"
       >
         <div className="kbts-site-footer-social-twitter-icon" />
       </a>
@@ -34,6 +37,7 @@ const SideMenuFooter = () => (
         style={{ color: '#015079' }}
         href="https://www.linkedin.com/in/karthikbalaji9294"
         target="_blank"
+        rel="noopener"
       >
         <div className="kbts-site-footer-social-linkedin-icon" />
       </a>
@@ -41,6 +45,7 @@ const SideMenuFooter = () => (
         style={{ color: '#87969a' }}
         href="https://github.com/karthikbalajikb"
         target="_blank"
+        rel="noopener"
       >
         <div className="kbts-site-footer-social-github-icon" />
       </a>
