@@ -16,6 +16,5 @@ deploy:
   only: hosting:production
   on:
     branch: master
-  token:
-    secure: $FIREBASE_TOKEN
+  token: $FIREBASE_TOKEN
   message: 'Yooo KB !!! ... KB TechSpace is deployed now'
