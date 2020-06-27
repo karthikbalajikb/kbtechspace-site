@@ -13,9 +13,9 @@ script:
 deploy:
   provider: firebase
   edge: true
-  only: hosting
+  only: hosting:production
   on:
-    branch: develop
+    branch: master
   token:
     secure: $FIREBASE_TOKEN
   message: 'Yooo KB !!! ... KB TechSpace is deployed now'
