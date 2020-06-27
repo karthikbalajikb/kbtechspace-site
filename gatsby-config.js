@@ -48,7 +48,7 @@ module.exports = {
         short_name: 'KBTechSpace',
         start_url: '/',
         background_color: '#1c262b',
-        theme_color: '#540a2f',
+        theme_color: '#fcde59',
         display: 'standalone',
         icon: 'assets/logo.png', // This path is relative to the root of the site.
       },
