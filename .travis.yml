@@ -12,6 +12,7 @@ script:
   - yarn build
 deploy:
   provider: firebase
+  edge: true
   only: hosting
   on:
     branch: develop
