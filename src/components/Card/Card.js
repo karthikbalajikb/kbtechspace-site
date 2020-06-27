@@ -83,7 +83,7 @@ const Container = styled.div`
   display: grid;
   grid-template-rows: 1fr 1fr;
   position: relative;
-  box-shadow: 1px 0px 19px 5px #eef2f7;
+  box-shadow: 1px 0px 19px 5px #eceef4;
 
   &:hover {
     box-shadow: 0px 0px 16px 6px #e1e6e8;

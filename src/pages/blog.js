@@ -32,7 +32,7 @@ const Blog = ({
   return (
     <Layout pathname={'/blog/'}>
       <section>
-        <PageHeader title="blog" logo="fas fa-newspaper" />
+        <PageHeader title="Blog" logo="fas fa-newspaper" />
         <section className="kbts-page-blog">
           {edges
             .filter(edge => !!edge.node.frontmatter.publishedDate) // You can filter your posts based on some criteria

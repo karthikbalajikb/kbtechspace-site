@@ -4,13 +4,13 @@ slug: "css-grid-how-i-made-use-of-it"
 publishedDate: "2020-06-01"
 updatedDate: "2020-06-01"
 title: "CSS Grid: How I made use of it"
-thumbnail: "https://user-images.githubusercontent.com/8594076/36646017-c340bf96-1a97-11e8-99da-d4d5e48ba2e6.png"
+thumbnail: "https://user-images.githubusercontent.com/8594076/84599095-29047080-ae8d-11ea-8df1-117ac518e36a.png"
 tags: ["css grid", "layout"]
 readTime: "3 min"
 wordCount: "2395"
 ---
 
-![wd](https://user-images.githubusercontent.com/8594076/36646017-c340bf96-1a97-11e8-99da-d4d5e48ba2e6.png)
+![css grids](https://user-images.githubusercontent.com/8594076/84599095-29047080-ae8d-11ea-8df1-117ac518e36a.png)
 
 ##### About this post
 

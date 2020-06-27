@@ -59,8 +59,8 @@ SSSssshhhhh!! The code starts below --> */}
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           <link
-            rel="preconnect"
-            href="https://fonts.googleapis.com/css?family=Muli&display=swap"
+            href="https://fonts.googleapis.com/css?family=Muli:300,400,500,600,700,900&display=swap"
+            rel="stylesheet"
           />
           {props.headComponents}
         </head>

@@ -11,7 +11,7 @@ import '../pageCSS/about.scss'
 const About = ({ data }) => (
   <Layout pathname={'/about/'}>
     <section className="kbts-page-about">
-      <PageHeader title="about me" logo="fas fa-user-secret" />
+      <PageHeader title="About Me" logo="fas fa-user-secret" />
       <div className="kbts-page-about-ribbon">
         <Ribbon title="I Can Help You With" />
       </div>

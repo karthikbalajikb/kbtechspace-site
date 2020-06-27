@@ -124,7 +124,7 @@ class Resume extends React.Component {
               }
             />
           </FixedDownloadButton>
-          <PageHeader title="resume" logo="fas fa-id-card-alt" />
+          <PageHeader title="Resume" logo="fas fa-id-card-alt" />
           <div className="kbts-page-resume-content">
             <StepperList title="WORK HISTORY" icon="fa-laptop" jobs={jobs} />
             <article className="kbts-page-resume-skills">

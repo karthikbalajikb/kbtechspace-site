@@ -45,8 +45,8 @@ const Dashboard = ({ data }) => {
           <Ribbon title="Monitoring Myself" />
         </div>
         <section className="kbts-page-dashboard-service">
-          <StatsCard name="Google: All Time Views" count={allTimeStats} />
-          <StatsCard name="Google: Today Views" count={todayStats} />
+          <StatsCard name="All Time Views" count={allTimeStats} />
+          <StatsCard name="Today Views" count={todayStats} />
         </section>
       </section>
     </Layout>

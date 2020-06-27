@@ -16,17 +16,18 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 20px;
-  height: 100px;
+  height: 140px;
   background-color: white;
-  box-shadow: 1px 0px 19px 5px #eef2f7;
+  box-shadow: 1px 0px 19px 5px #eceef4;
   border-radius: 4px;
 `
 
 const Stats = styled.div`
-  font-weight: 600;
+  font-size: 48px;
+  font-weight: 300;
 `
 
 const StatsLabel = styled.div`
-  font-size: 14px;
+  font-size: 15px;
   color: #a4a5a7;
 `

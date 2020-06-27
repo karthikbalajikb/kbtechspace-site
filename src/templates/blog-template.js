@@ -179,6 +179,10 @@ const PostContent = styled.div`
   blockquote > p {
     padding-left: 20px;
   }
+
+  img {
+    width: 100% !important;
+  }
 `
 
 const DiscussionWrapper = styled.div`
@@ -209,6 +213,7 @@ const Name = styled.div`
   grid-row: 1;
   align-self: flex-end;
   font-size: 14px;
+  font-weight: 600;
 `
 
 const Metadata = styled.div`
