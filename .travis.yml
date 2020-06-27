@@ -7,12 +7,12 @@ cache:
     - node_modules
 before_script:
   - yarn install
-  - npm install firebase-tools -g
 
 script:
-  - yarn build && firebase deploy --only hosting
+  - yarn build
 deploy:
   provider: firebase
+  only: hosting
   on:
     branch: develop
   token:
