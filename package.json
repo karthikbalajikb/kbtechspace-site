@@ -32,8 +32,10 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-helmet": "^5.2.0",
+    "react-query": "^2.4.13",
     "react-typography": "^0.16.13",
     "styled-components": "^4.3.2",
+    "styled-system": "^5.1.5",
     "typography": "^0.16.17",
     "typography-theme-grand-view": "^0.15.10"
   },
