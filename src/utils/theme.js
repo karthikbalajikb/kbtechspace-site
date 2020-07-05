@@ -63,7 +63,7 @@ export const theme = {
     onPrimary: {
       light: '#FFFFFF',
       main: '#FFFFFF',
-      dark: '#FFFFFF',
+      dark: '#1c262b',
     },
     secondary: {
       light: '',

@@ -3,7 +3,9 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { DiscussionEmbed } from 'disqus-react'
 
-import Layout from '../components'
+import Layout from '../components';
+import SubscribeCard from '../components/SubscribeCard';
+
 import './blog-template.scss'
 
 export default function Template({
@@ -119,6 +121,7 @@ export default function Template({
       </div>
       <DiscussionWrapper>
         <DiscussionEmbed {...disqusConfig} />
+        <SubscribeCard />
       </DiscussionWrapper>
     </Layout>
   )
@@ -187,6 +190,10 @@ const PostContent = styled.div`
 
 const DiscussionWrapper = styled.div`
   padding: 10% 15%;
+
+  @media(max-width: 760px) {
+    padding: 10% 0%;
+  }
 `
 
 const BlogInfoStrip = styled.div`
