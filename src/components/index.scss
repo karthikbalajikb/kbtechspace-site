@@ -31,6 +31,10 @@ body {
   }
 }
 
+.kbts-site-main {
+  background-color: #f4f6fc;
+}
+
 @media only screen and (min-width: 760px) {
   .kbts-site-main {
     display: grid;
@@ -84,10 +88,13 @@ body {
   }
 }
 
-.site-main-content{
+.site-main-content {
   height: 100vh;
-  background: #F4F6FC;
+  background: #f4f6fc;
   overflow-y: scroll;
+  @media (max-width: 760px) {
+    padding-bottom: 65px;
+  }
 }
 
 // *::-webkit-scrollbar {

@@ -1,10 +1,13 @@
 import * as functions from 'firebase-functions';
+import * as admin from 'firebase-admin';
+
 const axios = require('axios');
 import { google } from 'googleapis';
 
 import * as dotenv from 'dotenv';
 
 dotenv.config();
+admin.initializeApp();
 
 // Start writing Firebase Functions
 // https://firebase.google.com/docs/functions/typescript
@@ -77,4 +80,26 @@ export const linkedInView = functions.https.onRequest(async (request, response) 
     response.set('Access-Control-Allow-Origin', '*');
     response.set('Access-Control-Allow-Methods', 'GET');
     response.status(200).send({ data: responseData });
-})
+});
+
+// firestore function
+
+// [START addSubscriber]
+// Take the email, tags parameter passed to this HTTP endpoint and insert it into
+// Cloud Firestore under the path /subscribers/:documentId
+// [START addSubscriberTrigger]
+exports.addSubscriber = functions.https.onRequest(async (req, res) => {
+    // [END addSubscriberTrigger]
+    // Grab the email and tag parameter.
+    const { email, tag } = req.query;
+    console.log('query', email, tag);
+    // [START adminSdkAdd]
+    // Push the new Subscriber into Cloud Firestore using the Firebase Admin SDK.
+    const writeResult = await admin.firestore().collection('subscribers').add({ name: email, email, tag: [tag] });
+    res.set('Access-Control-Allow-Origin', '*');
+    res.set('Access-Control-Allow-Methods', 'GET');
+    // Send back a message that we've succesfully written the message
+    res.status(200).send({ data: { result: `Message with ID: ${writeResult.id} added.` } });
+    // [END adminSdkAdd]
+});
+    // [END addSubscriber]
