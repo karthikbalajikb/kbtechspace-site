@@ -34,14 +34,15 @@ const NameCard = props => (
 export default NameCard
 
 const Angle = styled.p`
-  color: ${({ theme }) => `${theme.primary.main}`};
+  color: ${({ theme }) => `${theme.primary.dark}`};
   font-size: ${({ size }) => `${size}`};
   font-weight: 900;
   margin: 0 10px;
 `
 
 const Letter = styled.p`
-  color: ${({ theme }) => `${theme.primary.main}`};
+  color: ${({ theme }) => `${theme.primary.dark}`};
   font-size: ${({ size }) => `${size}`};
   font-weight: 900;
+  margin-bottom: 0;
 `

@@ -22,17 +22,19 @@ body {
 @media only screen and (max-width: 760px) {
   .kbts-site-container {
     grid-template-columns: auto;
+    background-color: var(--surface-main);
   }
 }
 
 @media only screen and (min-width: 760px) {
   .kbts-site-container {
-    grid-template-columns: 120px auto !important;
+    grid-template-columns: 200px auto !important;
+    background-color: var(--surface-main);
   }
 }
 
 .kbts-site-main {
-  background-color: #f4f6fc;
+  background-color: var(--surface-main);
 }
 
 @media only screen and (min-width: 760px) {
@@ -64,11 +66,17 @@ body {
 
   display: grid;
   grid-template-columns: 50px;
-  background-color: #fcde59;
+  background-color: var(--surface-main);
   height: 50px;
   width: 50px;
   margin: 10px;
   border-radius: 24px;
+  box-shadow: var(--box-shadow-md);
+
+  :active {
+    border-radius: 24px;
+    box-shadow: var(--box-shadow-mdActive);
+  }
 
   &-menu {
     @extend .fas;
@@ -90,7 +98,7 @@ body {
 
 .site-main-content {
   height: 100vh;
-  background: #f4f6fc;
+  background: var(--surface-main);
   overflow-y: scroll;
   @media (max-width: 760px) {
     padding-bottom: 65px;

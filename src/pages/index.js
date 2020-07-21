@@ -17,7 +17,9 @@ const IndexPage = () => (
         text_4="UI/UX Enthusiast"
         text_5="Tech Blogger"
       />
-      <StyledWallpaper src={wallpaperSVG}  alt="kb-wallpaper" />
+      <WallpaperWrapper>
+        <StyledWallpaper src={wallpaperSVG} alt="kb-wallpaper" />
+      </WallpaperWrapper>
       <TextTyping text_3="Hitting the keyboard hard, Until the magic happens" />
     </Container>
   </Layout>
@@ -32,18 +34,30 @@ const Container = styled.div`
   padding: 0px 70px;
   grid-column-gap: 15%;
 
-  @media(max-width: 760px) {
+  @media (max-width: 760px) {
     grid-template-columns: auto;
     padding: 0px 10px;
   }
 `
 
-const StyledWallpaper = styled.img`
-  width: 74vw;
-  height: calc(100vh - 100px);
+const WallpaperWrapper = styled.div`
+  box-shadow: ${({ theme }) => theme.boxShadow.lg};
+  padding: 24px 24px 0px 24px;
+  border-radius: 42% 70% 67% 9% / 6% 54% 96% 35%;
+  width: 100%;
   margin: auto;
 
-  @media(max-width: 760px) {
+  @media (max-width: 760px) {
+    width: 80%;
+  }
+`
+
+const StyledWallpaper = styled.img`
+  padding: 30px;
+  border-radius: 42% 70% 67% 9% / 6% 54% 96% 35%;
+  background-color: ${({ theme }) => `${theme.primary.dark}`};
+
+  @media (max-width: 760px) {
     height: initial;
   }
 `

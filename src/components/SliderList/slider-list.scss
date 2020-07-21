@@ -41,8 +41,9 @@
       line-height: 42px;
       color: #345;
       padding: 0 6px;
-      background: rgba(255, 255, 255, 0.46);
+      background: var(--surface-main);
       border-radius: 50%;
+      box-shadow: var(--box-shadow-md);
     }
   }
 

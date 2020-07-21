@@ -3,8 +3,8 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { DiscussionEmbed } from 'disqus-react'
 
-import Layout from '../components';
-import SubscribeCard from '../components/SubscribeCard';
+import Layout from '../components'
+import SubscribeCard from '../components/SubscribeCard'
 
 import './blog-template.scss'
 
@@ -111,9 +111,15 @@ export default function Template({
           </div>
           <PostContainer>
             <BlogInfoStrip>
-              <StyledAvatar src="https://media-exp1.licdn.com/dms/image/C5603AQE4w0vZE_u-Yg/profile-displayphoto-shrink_100_100/0?e=1596067200&v=beta&t=yO2uQI8vlGZRdHQLhwtkPc4ZOw5yknpwbRi_M0he6Qc" alt="kb" />
+              <StyledAvatar
+                src="https://firebasestorage.googleapis.com/v0/b/kbtechspace-8907.appspot.com/o/karthikbalaji_transparent.png?alt=media&token=943905da-c4a3-4d27-a8d9-b51302b082e7"
+                alt="kb"
+              />
               <Name>Karthik Balaji</Name>
-              <Metadata>{frontmatter.publishedDate} • {frontmatter.readTime} ({frontmatter.wordCount} words)</Metadata>
+              <Metadata>
+                {frontmatter.publishedDate} • {frontmatter.readTime} (
+                {frontmatter.wordCount} words)
+              </Metadata>
             </BlogInfoStrip>
             <PostContent dangerouslySetInnerHTML={{ __html: html }} />
           </PostContainer>
@@ -148,13 +154,20 @@ export const pageQuery = graphql`
 const PostContainer = styled.div`
   padding: 10px 15px 7px;
   margin-top: 15px;
-  border-radius: 4px;
-  box-shadow: 0 0 16px 0 rgba(48, 63, 80, 0.05);
-  background: #fff;
+  padding: 19px;
+  border-radius: 0.55rem;
+  background-color: ${({ theme }) => `${theme.surface.main}`};
+  box-shadow: ${({ theme }) => `${theme.boxShadow.inner}`};
 `
 
 const PostContent = styled.div`
-  margin-top: 10px;
+  margin-top: 20px;
+  box-shadow: ${({ theme }) => `${theme.boxShadow.md}`};
+  padding: 20px;
+  border-radius: 0.55rem;
+  border: 1px solid #cfcfcf5e;
+  background-color: ${({ theme }) => `${theme.surface.main}`};
+
   p {
     font-size: medium;
     line-height: 1.7em;
@@ -191,25 +204,29 @@ const PostContent = styled.div`
 const DiscussionWrapper = styled.div`
   padding: 10% 15%;
 
-  @media(max-width: 760px) {
-    padding: 10% 0%;
+  @media (max-width: 760px) {
+    padding: 10% 5%;
   }
 `
 
 const BlogInfoStrip = styled.div`
   display: grid;
-  grid-template-columns: 50px 1fr;
+  grid-template-columns: 60px 1fr;
   grid-template-rows: repeat(2, 1fr);
   height: 60px;
-  background-color: white;
   grid-column-gap: 10px;
+  box-shadow: ${({ theme }) => `${theme.boxShadow.md}`};
+  padding-left: 20px;
+  border-radius: 0.55rem;
+  border: 1px solid #cfcfcf5e;
+  background-color: ${({ theme }) => `${theme.surface.main}`};
 `
 
 const StyledAvatar = styled.img`
   grid-column: 1;
   grid-row: span 2;
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
   margin-bottom: 0px;
   justify-self: center;
   align-self: center;

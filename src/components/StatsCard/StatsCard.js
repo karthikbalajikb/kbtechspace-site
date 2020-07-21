@@ -17,9 +17,9 @@ const Container = styled.div`
   justify-content: space-between;
   padding: 20px;
   height: 140px;
-  background-color: white;
-  box-shadow: 1px 0px 19px 5px #eceef4;
-  border-radius: 4px;
+  box-shadow: ${({ theme }) => `${theme.boxShadow.md}`};
+  background-color: ${({ theme }) => `${theme.surface.main}`};
+  border-radius: .55rem;
 `
 
 const Stats = styled.div`

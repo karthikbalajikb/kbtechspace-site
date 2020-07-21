@@ -2,12 +2,12 @@
   font-family: 'muli';
 
   &__container {
-    padding: 0 15%;
+    padding: 0 10%;
     max-width: 100vw;
   }
 
   &__title {
-    color: #1c262b;
+    color: var(--secondary-main);
     text-align: center;
     padding-top: 40px;
     font-size: 3em;

@@ -13,7 +13,7 @@ class SideMenuContent extends React.Component {
         { label: 'HOME', path: '/', class: 'home', active: false },
         { label: 'ABOUT', path: '/about/', class: 'about', active: false },
         { label: 'BLOG', path: '/blog/', class: 'blog', active: false },
-        { label: 'RESUME', path: '/resume/', class: 'resume', active: false },
+        { label: 'PROFILE', path: '/profile/', class: 'resume', active: false },
         { label: 'DASHBOARD', path: '/dashboard/', class: 'dashboard', active: false },
       ],
     }
