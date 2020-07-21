@@ -1,15 +1,15 @@
 .kbts-name-card {
   display: grid;
-  height: 200px;
   align-self: center;
   z-index: 1;
   text-align: center;
-  color: #1c262b;
+  color: var(--secondary-main);
   font-size: 24px;
 
   &-text-1 {
     margin: 0;
     font-style: italic;
+    margin-bottom: 25px;
   }
   &-text-2 {
     display: flex;

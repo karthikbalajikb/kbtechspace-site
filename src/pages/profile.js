@@ -15,12 +15,19 @@ import '../pageCSS/resume.scss'
 
 const jobs = [
   {
-    duration: 'November 2018 - CURRENT',
+    duration: 'July 2020 - CURRENT',
+    role: 'Software Engineer II - Front End',
+    company: 'Ally.io',
+    description: 'Helping Ally OKR system to provide best user experience to our customers',
+    link: 'https://ally.io/',
+    markCurrent: true,
+  },
+  {
+    duration: 'November 2018 - July 2020',
     role: 'Software Engineer - Front End',
     company: 'Auzmor',
-    description: 'Working on building rich user interface components for a LMS SaaS Product (Auzmor Learn)',
+    description: 'Built Auzmor Learn (LMS) a SaaS Product UI from ground up',
     link: 'https://learn.auzmor.com/',
-    markCurrent: true,
   },
   {
     duration: 'July 2018 - November 2018',
@@ -74,9 +81,9 @@ class Resume extends React.Component {
     '@type': 'Article',
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `https://kbtechspace.com/resume/`,
+      '@id': `https://kbtechspace.com/profile/`,
     },
-    headline: `Karthik Balaji | Resume`,
+    headline: `Karthik Balaji | Profile`,
     image: {
       '@type': 'ImageObject',
       url: `https://user-images.githubusercontent.com/8594076/45932661-210beb00-bf9d-11e8-892c-192e9bba6750.jpg`,
@@ -103,10 +110,9 @@ class Resume extends React.Component {
 
   render() {
     return (
-      <Layout pathname={'/resume/'}>
+      <Layout pathname={'/profile/'}>
         <section className="kbts-page-resume">
-          <Helmet defaultTitle={`Karthik Balaji | Resume`}>
-            {/* title="Karthik Balaji | Resume" */}
+          <Helmet defaultTitle={`Karthik Balaji | Profile`}>
             <meta
               name="description"
               content="Know about my technical skills"
@@ -124,7 +130,7 @@ class Resume extends React.Component {
               }
             />
           </FixedDownloadButton>
-          <PageHeader title="Resume" logo="fas fa-id-card-alt" />
+          <PageHeader title="Profile" logo="fas fa-id-card-alt" />
           <div className="kbts-page-resume-content">
             <StepperList title="WORK HISTORY" icon="fa-laptop" jobs={jobs} />
             <article className="kbts-page-resume-skills">

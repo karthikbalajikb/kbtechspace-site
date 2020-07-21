@@ -58,7 +58,7 @@ export const theme = {
     primary: {
       light: '',
       main: '#fcde59',
-      dark: '',
+      dark: '#f4d242',
     },
     onPrimary: {
       light: '#FFFFFF',
@@ -86,8 +86,8 @@ export const theme = {
       dark: '#5C5C5C',
     },
     surface: {
-      light: '#FFFFFF',
-      main: '#F9F9F9',
+      light: '#ffffff',
+      main: '#e6e7ed',
       dark: '#000000',
     },
     onSurface: {
@@ -104,6 +104,16 @@ export const theme = {
       light: '#FFFFFF',
       main: '#FFFFFF',
       dark: '#FFFFFF',
+    },
+    boxShadow: {
+      sm: '',
+      md: '6px 6px 12px rgba(0,0,0,0.11), -6px -6px 12px #ffffff94',
+      mdActive: '6px 6px 12px #b8b9be, -6px -6px 12px #ffffff94',
+      lg: '8px 8px 16px 0px rgba(0, 0, 0, 0.06), -8px -8px 16px 0px #fff',
+      xl: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+      inner: 'inset 2px 2px 5px #b8b9be, inset -3px -3px 7px #ffffff',
+      outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
+      none: 'none',
     },
   },
   ...productColors,

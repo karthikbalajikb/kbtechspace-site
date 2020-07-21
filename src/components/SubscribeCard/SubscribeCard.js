@@ -8,7 +8,7 @@ import SayHelloCard from '../SayHelloCard'
 import { Space, Flexbox, Image } from '../../styles/styled'
 import subscribeCardSVG from '../../../assets/icons/subscribeCard.svg'
 
-import useMediaQuery from '../../hooks/useMediaQuery';
+import useMediaQuery from '../../hooks/useMediaQuery'
 
 const views = {
   SUBSCRIBE_CARD: 'SUBSCRIBE_CARD',
@@ -17,10 +17,13 @@ const views = {
 
 const SubscribeCard = () => {
   const [email, setEmail] = useState('')
-  const [view, setView] = useState(views.SUBSCRIBE_CARD);
-  const { isMobile } = useMediaQuery();
+  const [view, setView] = useState(views.SUBSCRIBE_CARD)
+  const { isMobile } = useMediaQuery()
 
-  const [addNewSubscriber, { status, isIdle, isLoading, isSuccess, isError, data, error, reset }] = useMutation(
+  const [
+    addNewSubscriber,
+    { status, isIdle, isLoading, isSuccess, isError, data, error, reset },
+  ] = useMutation(
     async () => {
       await fetch(
         `https://us-central1-kbtechspace-8907.cloudfunctions.net/addSubscriber?email=${email}&tag=blog`
@@ -28,11 +31,11 @@ const SubscribeCard = () => {
     },
     {
       onSuccess: data => {
-          setView(views.SAY_HELLO)
+        setView(views.SAY_HELLO)
       },
-      onError: (err) => {
-        console.log('onError >>', err);
-      }
+      onError: err => {
+        console.log('onError >>', err)
+      },
     }
   )
 
@@ -68,10 +71,11 @@ export default SubscribeCard
 
 const Container = styled.div`
   display: flex;
-  background-color: ${({ theme }) => `${theme.primary.main}`};
+  box-shadow: ${({ theme }) => `${theme.boxShadow.md}`};
+  background-color: ${({ theme }) => `${theme.surface.main}`};
   border-radius: 10px;
   padding: 30px;
-  @media(max-width: 760px) {
+  @media (max-width: 760px) {
     flex-direction: column;
   }
 `
@@ -83,20 +87,21 @@ const Header = styled.div`
 
 const SubText = styled.div`
   font-size: 14px;
-  color: #1c262b;
+  color: ${({ theme }) => `${theme.secondary.main}`};
 `
 
 const Input = styled.input`
   outline: none;
   border: none;
-  background-color: #f4f6fc;
+  background-color: ${({ theme }) => `${theme.surface.main}`};
+  box-shadow: ${({ theme }) => `${theme.boxShadow.inner}`};
   border-radius: 3px;
   height: 37px;
   width: 70%;
   padding-left: 20px;
   color: #a9a9a9;
   font-size: 16px;
-  @media(max-width: 760px) {
+  @media (max-width: 760px) {
     width: 100%;
   }
 `

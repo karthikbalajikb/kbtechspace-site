@@ -125,6 +125,6 @@ const Subscribe = styled.section`
   margin-top: 100px;
 
   @media(max-width: 760px) {
-    width: 100%;
+    width: 90%;
   }
 `

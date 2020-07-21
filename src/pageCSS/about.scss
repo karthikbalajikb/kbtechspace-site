@@ -7,9 +7,9 @@
 
   &-service {
     display: grid;
-    grid-template-columns: auto auto auto auto;
-    grid-gap: 2%;
-    padding: 5%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 4%;
+    padding: 7%;
   }
 
   &-work-progress {
@@ -23,5 +23,6 @@
 @media only screen and (max-width: 760px) {
   .kbts-page-about-service {
     grid-template-columns: auto;
+    grid-row-gap: 40px;
   }
 }

@@ -52,6 +52,8 @@ const StyledCodeText = styled.code`
   grid-column: span 2;
   grid-row: 2;
   justify-self: center;
+  align-self: end;
+  margin-bottom: 15px;
 
   @media(max-width: 760px) {
     display: none;
