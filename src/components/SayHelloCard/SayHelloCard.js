@@ -39,9 +39,10 @@ SayHelloCard.defaultProps = {
 export default SayHelloCard
 
 const Container = styled(Flexbox)`
-  background-color: ${({ theme }) => `${theme.primary.main}`};
+  background-color: ${({ theme }) => `${theme.surface.main}`};
   border-radius: 10px;
   padding: 30px;
+  box-shadow: ${({ theme }) => `${theme.boxShadow.md}`};
   @media(max-width: 760px) {
     flex-direction: column;
   }

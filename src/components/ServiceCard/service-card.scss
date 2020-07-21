@@ -1,5 +1,10 @@
 .kbts-servicecard {
   display: grid;
+  box-shadow: var(--box-shadow-md);
+  border-radius: .55rem;
+  padding: 20px;
+  height: 300px;
+  border: 1px solid #c4c6cb57;
 
   &-img {
     width: 100px;

@@ -18,18 +18,19 @@ const StyledButton = styled.button`
   font-size: 13px;
   width: 120px;
   height: 37px;
-  color: aliceblue;
-  background-color: #1c262b;
+  color: ${({ theme }) => `${theme.secondary.main}`};;
+  background-color: ${({ theme }) => `${theme.surface.main}`};
   border-radius: 50px;
   cursor: pointer;
-  box-shadow: 0px 3px 14px 1px #87969a;
+  box-shadow: ${({ theme }) => `${theme.boxShadow.md}`};
 
   :hover {
-    background-color: #345;
-    border-radius: 50px;
+    background: linear-gradient(145deg, #cfd0d4, #f6f7fd);
+    box-shadow: ${({ theme }) => `${theme.boxShadow.mdActive}`};
   }
 
   :active {
-    border: 4px solid #8ba4be;
+    background: linear-gradient(20deg, #cfd0d4, #f6f7fd);
+    box-shadow: ${({ theme }) => `${theme.boxShadow.mdActive}`};
   }
 `

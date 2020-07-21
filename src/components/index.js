@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import { ThemeProvider } from 'styled-components';
+import { createGlobalStyle, ThemeProvider } from 'styled-components';
 
 import SideMenu from './side-menu/side-menu'
 import Header from './header'
@@ -47,7 +47,7 @@ class Layout extends React.Component {
       document.getElementsByClassName('kbts-site-container')[0].style[
         'grid-template-columns'
       ] =
-        '120px auto'
+        '160px auto'
       this.setState({ sideMenu: 'open' })
     }
   }
@@ -65,6 +65,17 @@ class Layout extends React.Component {
   }
 
   render() {
+    const GlobalStyle = createGlobalStyle`
+      html {
+        --surface-main: ${({ theme }) => theme.surface.main};
+        --primary-main: ${({ theme }) => theme.primary.main};
+        --primary-dark: ${({ theme }) => theme.primary.dark};
+        --secondary-main: ${({ theme }) => theme.secondary.main};
+        --box-shadow-md: ${({ theme }) => theme.boxShadow.md };
+        --box-shadow-mdActive: ${({ theme }) => theme.boxShadow.mdActive };
+      }
+    `;
+
     const { pathname } = this.props
     return (
       <StaticQuery
@@ -72,6 +83,7 @@ class Layout extends React.Component {
         render={data => (
           <ThemeProvider theme={theme[this.state.theme]}>
             <div>
+              <GlobalStyle />
               <Helmet
                 title={data.site.siteMetadata.title}
                 meta={[
