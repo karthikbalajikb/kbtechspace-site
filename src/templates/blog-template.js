@@ -155,7 +155,7 @@ const PostContainer = styled.div`
   padding: 10px 15px 7px;
   margin-top: 15px;
   padding: 19px;
-  border-radius: 0.55rem;
+  border-radius: ${({ theme }) => `${theme.borderRadius.lg}`};
   background-color: ${({ theme }) => `${theme.surface.main}`};
   box-shadow: ${({ theme }) => `${theme.boxShadow.inner}`};
 `
@@ -164,8 +164,7 @@ const PostContent = styled.div`
   margin-top: 20px;
   box-shadow: ${({ theme }) => `${theme.boxShadow.md}`};
   padding: 20px;
-  border-radius: 0.55rem;
-  border: 1px solid #cfcfcf5e;
+  border-radius: ${({ theme }) => `${theme.borderRadius.none} ${theme.borderRadius.none} ${theme.borderRadius.md} ${theme.borderRadius.md}`};
   background-color: ${({ theme }) => `${theme.surface.main}`};
 
   p {
@@ -217,8 +216,7 @@ const BlogInfoStrip = styled.div`
   grid-column-gap: 10px;
   box-shadow: ${({ theme }) => `${theme.boxShadow.md}`};
   padding-left: 20px;
-  border-radius: 0.55rem;
-  border: 1px solid #cfcfcf5e;
+  border-radius: ${({ theme }) => `${theme.borderRadius.md} ${theme.borderRadius.md} ${theme.borderRadius.none} ${theme.borderRadius.none}`};
   background-color: ${({ theme }) => `${theme.surface.main}`};
 `
 

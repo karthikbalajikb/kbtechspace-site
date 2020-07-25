@@ -4,15 +4,23 @@ import styled from 'styled-components'
 
 const SideMenuHeader = ({ logo }) => (
   <Container>
-    <Img style={{ borderRadius: '.55rem' }} sizes={logo} alt="KBTechSpace.com" />
+    <ImgWrapper>
+      <Img style={{ borderRadius: '1rem' }} sizes={logo} alt="KBTechSpace.com" />
+    </ImgWrapper>
   </Container>
 )
 
 export default SideMenuHeader
 
 const Container = styled.div`
-  padding: 10px;
-  box-shadow: ${({ theme }) => `${theme.boxShadow.md}`};
-  border-radius: 0.55rem;
-  border: 1px solid #cfcfcf;
+  padding: 6px;
+  margin-top: 30px;
+  box-shadow: ${({ theme }) => `${theme.boxShadow.sm}`};
+  border-radius: ${({ theme }) => `${theme.borderRadius.md}`};
 `
+
+const ImgWrapper = styled.div`
+  padding: 13px;
+  box-shadow: ${({ theme }) => `${theme.boxShadow.inner}`};
+  border-radius: ${({ theme }) => `${theme.borderRadius.md}`};
+`;

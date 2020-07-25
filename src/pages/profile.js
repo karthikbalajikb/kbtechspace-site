@@ -10,6 +10,8 @@ import SliderList from '../components/SliderList/slider-list'
 import Ribbon from '../components/Ribbon/ribbon'
 import Button from '../components/Button'
 
+import { Space } from '../styles/styled'
+
 import favicon from '../../assets/logo.png'
 import '../pageCSS/resume.scss'
 
@@ -141,28 +143,40 @@ class Resume extends React.Component {
               <SliderList text="Angular" value="90" />
               <SliderList text="NodeJS" value="70" />
 
+              <Space vertical space={50} />
+
               <Ribbon title="Immersive Technology" />
               <SliderList text="Morzilla A-Frame" value="40" />
               <SliderList text="Vuforia" value="30" />
               <SliderList text="Google ARCore" value="20" />
               <SliderList text="Apple ARKit" value="20" />
 
+              <Space vertical space={50} />
+
               <Ribbon title="Standards & Patterns" />
               <SliderList text="ES6" value="100" />
               <SliderList text="REDUX" value="80" />
+
+              <Space vertical space={50} />
 
               <Ribbon title="Cloud" />
               <SliderList text="Amazon web services" value="70" />
               <SliderList text="Firebase" value="50" />
               <SliderList text="Google Cloud Platform" value="30" />
 
+              <Space vertical space={50} />
+
               <Ribbon title="Build tools" />
               <SliderList text="Webpack" value="100" />
               <SliderList text="Rollup" value="80" />
 
+              <Space vertical space={50} />
+
               <Ribbon title="CMS" />
               <SliderList text="Wordpress" value="80" />
               <SliderList text="WooCommerce" value="90" />
+
+              <Space vertical space={50} />
 
               <Ribbon title="External Services" />
               <SliderList text="IBM Watson" value="80" />
@@ -175,6 +189,7 @@ class Resume extends React.Component {
               icon="fa-graduation-cap"
               jobs={eduction}
             />
+            <Space vertical space={50} />
           </div>
         </section>
       </Layout>

@@ -18,19 +18,20 @@ const StyledButton = styled.button`
   font-size: 13px;
   width: 120px;
   height: 37px;
-  color: ${({ theme }) => `${theme.secondary.main}`};;
+  color: ${({ theme }) => `${theme.onSurface.main}`};
   background-color: ${({ theme }) => `${theme.surface.main}`};
-  border-radius: 50px;
+  border-radius: ${({ theme }) => `${theme.borderRadius.rounded}`};
   cursor: pointer;
-  box-shadow: ${({ theme }) => `${theme.boxShadow.md}`};
+  box-shadow: ${({ theme }) => `${theme.boxShadow.sm}`};
 
   :hover {
-    background: linear-gradient(145deg, #cfd0d4, #f6f7fd);
-    box-shadow: ${({ theme }) => `${theme.boxShadow.mdActive}`};
+    background: ${({ theme }) =>  `linear-gradient(145deg, ${theme.hoverSurface.main} , ${theme.surface.main})` };
+    box-shadow: ${({ theme }) => `${theme.boxShadow.smActive}`};
+    color: ${({ theme }) => `${theme.secondary.main}`};
   }
 
   :active {
-    background: linear-gradient(20deg, #cfd0d4, #f6f7fd);
-    box-shadow: ${({ theme }) => `${theme.boxShadow.mdActive}`};
+    background: ${({ theme }) =>  `linear-gradient(20deg, ${theme.hoverSurface.main} , ${theme.surface.main})` };
+    box-shadow: ${({ theme }) => `${theme.boxShadow.smActive}`};
   }
 `

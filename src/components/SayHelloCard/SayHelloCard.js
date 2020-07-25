@@ -40,7 +40,7 @@ export default SayHelloCard
 
 const Container = styled(Flexbox)`
   background-color: ${({ theme }) => `${theme.surface.main}`};
-  border-radius: 10px;
+  border-radius: ${({ theme }) => `${theme.borderRadius.default}`};
   padding: 30px;
   box-shadow: ${({ theme }) => `${theme.boxShadow.md}`};
   @media(max-width: 760px) {

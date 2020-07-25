@@ -4,11 +4,11 @@
   padding: 1%;
   margin: 2px 25px 40px 15px;
   position: relative;
-  border-radius: 0 15px 15px 15px;
+  border-radius: var(--border-radius-none) var(--border-radius-default) var(--border-radius-default) var(--border-radius-default);
   text-align: center;
   font-size: 12px;
   font-weight: bold;
-  color: var(--secondary-main);
+  color: var(--on-surface-main);
   text-transform: uppercase;
   box-shadow: var(--box-shadow-md);
   background-color: var(--surface-main);
@@ -26,6 +26,6 @@
     left: 70px;
     top: 40px;
     font-weight: 900;
-    color: var(--primary-dark);
+    color: var(--on-surface-main);
   }
 }

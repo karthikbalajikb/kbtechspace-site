@@ -73,7 +73,7 @@ const Container = styled.div`
   display: flex;
   box-shadow: ${({ theme }) => `${theme.boxShadow.md}`};
   background-color: ${({ theme }) => `${theme.surface.main}`};
-  border-radius: 10px;
+  border-radius: ${({ theme }) => `${theme.borderRadius.default}`};
   padding: 30px;
   @media (max-width: 760px) {
     flex-direction: column;
@@ -95,7 +95,7 @@ const Input = styled.input`
   border: none;
   background-color: ${({ theme }) => `${theme.surface.main}`};
   box-shadow: ${({ theme }) => `${theme.boxShadow.inner}`};
-  border-radius: 3px;
+  border-radius: ${({ theme }) => `${theme.borderRadius.default}`};
   height: 37px;
   width: 70%;
   padding-left: 20px;

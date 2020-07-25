@@ -85,12 +85,13 @@ const Container = styled.div`
   position: relative;
   box-shadow: ${({ theme }) => `${theme.boxShadow.md}`};
   padding: 19px;
-  border-radius: 0.55rem;
-  border: 1px solid #cfcfcf5e;
+  border-radius: ${({ theme }) => `${theme.borderRadius.md}`};
+  transition: background 0.3s ease;
 
   &:hover{
-    background: linear-gradient(145deg, #cfd0d4, #f6f7fd);
+    background: ${({ theme }) =>  `linear-gradient(145deg, ${theme.hoverSurface.main} , ${theme.surface.main})` };
     box-shadow: ${({ theme }) => `${theme.boxShadow.mdActive}`};
+    background-position: 0 200px;
   }
 `
 
@@ -100,7 +101,7 @@ const ImageSection = styled.div`
   max-height: ${() => `${THUMBNAIL_HEIGHT}px`};
   background-color: white;
   border-bottom: 1px solid white;
-  border-radius: 0.55rem;
+  border-radius: ${({ theme }) => `${theme.borderRadius.default}`};
 `
 
 const ImageWrapper = styled.div`
@@ -119,7 +120,7 @@ const AuthorLogo = styled.div`
   height: 70px;
   margin-left: 79px;
   border: 3px solid white;
-  border-radius: 39px;
+  border-radius: ${({ theme }) => `${theme.borderRadius.rounded}`};;
   position: absolute;
   top: 181px;
   left: 0;
@@ -133,7 +134,7 @@ const AuthorLogo = styled.div`
 const InfoSection = styled.div`
   display: grid;
   grid-template-rows: 3rem auto auto auto;
-  background-color: ${({ theme }) => `${theme.surface.main}`};;
+  background-color: ${({ theme }) => `${theme.transparent}`};;
 `
 
 const AuthorName = styled.div`

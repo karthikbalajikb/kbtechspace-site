@@ -47,7 +47,7 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
 
     &-date {
       position: absolute;
-      border-radius: 50%;
+      border-radius: var(--border-radius-rounded);
       border: 1px solid #d3d3d312;
       padding: 4%;
       background-color: white;
