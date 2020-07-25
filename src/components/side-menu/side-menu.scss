@@ -21,10 +21,10 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
   text-transform: uppercase;
   padding: 14%;
   text-align: center;
-  box-shadow: var(--box-shadow-md);
+  box-shadow: var(--box-shadow-sm);
   background-color: var(--surface-main);
   margin-top: 25px;
-  border-radius: 0.55rem;
+  border-radius: var(--border-radius-default);
 
   &-home,
   &-about,
@@ -33,11 +33,11 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
   &-dashboard {
     display: grid;
     text-decoration: none;
-    color: #324554;
+    color: var(--on-surface-main);
     width: 108px;
 
     &.active {
-      color: #ffffffdb;
+      color: var(--secondary-main);
     }
   }
 

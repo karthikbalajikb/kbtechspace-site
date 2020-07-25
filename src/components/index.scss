@@ -70,11 +70,11 @@ body {
   height: 50px;
   width: 50px;
   margin: 10px;
-  border-radius: 24px;
+  border-radius: var(--border-radius-md);
   box-shadow: var(--box-shadow-md);
 
   :active {
-    border-radius: 24px;
+    border-radius: var(--border-radius-md);
     box-shadow: var(--box-shadow-mdActive);
   }
 

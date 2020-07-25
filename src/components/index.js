@@ -68,11 +68,21 @@ class Layout extends React.Component {
     const GlobalStyle = createGlobalStyle`
       html {
         --surface-main: ${({ theme }) => theme.surface.main};
+        --on-surface-light: ${({ theme }) => theme.onSurface.light};
+        --on-surface-main: ${({ theme }) => theme.onSurface.main};
         --primary-main: ${({ theme }) => theme.primary.main};
         --primary-dark: ${({ theme }) => theme.primary.dark};
         --secondary-main: ${({ theme }) => theme.secondary.main};
+        --box-shadow-sm: ${({ theme }) => theme.boxShadow.sm };
         --box-shadow-md: ${({ theme }) => theme.boxShadow.md };
         --box-shadow-mdActive: ${({ theme }) => theme.boxShadow.mdActive };
+        --border-radius-none: ${({ theme }) => theme.borderRadius.none };
+        --border-radius-sm: ${({ theme }) => theme.borderRadius.sm };
+        --border-radius-default: ${({ theme }) => theme.borderRadius.default };
+        --border-radius-md: ${({ theme }) => theme.borderRadius.md };
+        --border-radius-lg: ${({ theme }) => theme.borderRadius.lg };
+        --border-radius-rounded: ${({ theme }) => theme.borderRadius.rounded };
+
       }
     `;
 

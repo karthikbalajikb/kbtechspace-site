@@ -8,8 +8,9 @@
     top: 47px;
     bottom: 10px;
     left: 37px;
-    width: 4px;
-    background: white;
+    width: 7px;
+    box-shadow: var(--box-shadow-sm);
+    background: var(--surface-main);
   }
 
   &-icon {
@@ -23,15 +24,16 @@
     line-height: 52px;
     margin: 0;
     color: #fff;
-    background: #8acb82;
-    border-radius: 50%;
+    background: #d4edd1;
+    border-radius: var(--border-radius-rounded);
+    box-shadow: var(--box-shadow-sm);
   }
 
   &-header-title {
     font-size: 1.3em;
     font-weight: 400;
     letter-spacing: 0;
-    color: gray;
+    color: var(--secondary-main);
     padding: 0 0 0 40px;
   }
 }
@@ -46,15 +48,16 @@
     content: '';
     position: absolute;
     top: 6px;
-    left: -8px;
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
+    left: -7px;
+    width: 16px;
+    height: 16px;
+    border-radius: var(--border-radius-rounded);
     background: #d4edd1;
+    box-shadow: var(--box-shadow-sm);
   }
 
   &--current:after {
-    background: #8acb82;
+    background: #d4edd1;
   }
 
   &-label {

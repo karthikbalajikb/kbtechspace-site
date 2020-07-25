@@ -19,7 +19,7 @@ const Container = styled.div`
   height: 140px;
   box-shadow: ${({ theme }) => `${theme.boxShadow.md}`};
   background-color: ${({ theme }) => `${theme.surface.main}`};
-  border-radius: .55rem;
+  border-radius: ${({ theme }) => `${theme.borderRadius.default}`};
 `
 
 const Stats = styled.div`

@@ -9,7 +9,7 @@ const SideMenuContentItem = props => {
   }
 
   const selectedStyle = () =>
-    props.active ? { boxShadow: `${defaultTheme.theme.light.boxShadow.inner}` } : {}
+    props.active ? { boxShadow: `${defaultTheme.theme.light.boxShadow.inner}`, color: `${defaultTheme.theme.light.secondary.main}` } : {}
 
   return (
     <Link className={`sideMenuContent-item-${props.cls}`} to={props.pathname}>
