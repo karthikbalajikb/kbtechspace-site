@@ -46,7 +46,7 @@ const SubscribeCard = () => {
         <Space horizontal space={50} />
         <Flexbox flexDirection="column" width={1}>
           <Header>Blogs straight to your inbox</Header>
-          <SubText>Get access to functions when they're added.</SubText>
+          <SubText>Get access to blogs when they're added.</SubText>
           <Flexbox mt={30} flexDirection={isMobile ? 'column' : 'none'}>
             <Input
               type="email"

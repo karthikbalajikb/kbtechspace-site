@@ -112,7 +112,7 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
 .side-menu {
   overflow: scroll;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto 1fr 1fr auto;
   margin: 10px;
   z-index: 2;
   padding: 0 16px;

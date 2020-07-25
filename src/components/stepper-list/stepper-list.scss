@@ -33,7 +33,7 @@
     font-size: 1.3em;
     font-weight: 400;
     letter-spacing: 0;
-    color: var(--secondary-main);
+    color: var(--on-surface-main);
     padding: 0 0 0 40px;
   }
 }
@@ -88,7 +88,7 @@
     text-transform: uppercase;
     margin: 0 0 0.2em 0;
     padding: 0;
-    color: #1c262bd6;
+    color: var(--on-surface-main);
   }
 
   &-subtext {
@@ -98,17 +98,18 @@
     font-weight: 400;
     letter-spacing: 1px;
     text-transform: uppercase;
+    color: var(--on-surface-main);
   }
 
   &-description {
     margin: 0.6em 0 0.2em 0;
     font-size: 15px;
-    color: #6e7579;
+    color: var(--gray-scale-600);
   }
 
   &-link {
     margin: 0.6em 0 0.2em 0;
     font-size: 15px;
-    color: #1c262bd6;
+    color: var(--on-surface-main);
   }
 }

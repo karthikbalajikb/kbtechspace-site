@@ -52,6 +52,7 @@ class SideMenuContent extends React.Component {
       <section className="sideMenuContent">
         {this.state.sideMenuData.map(d => (
           <SideMenuContentItem
+            theme={this.props.theme}
             key={d.label}
             label={d.label}
             pathname={d.path}

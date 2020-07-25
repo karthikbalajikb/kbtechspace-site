@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
@@ -10,7 +10,9 @@ import './index.scss'
 import favicon from '../../assets/logo.png'
 import 'prismjs/themes/prism-tomorrow.css'
 
-import { theme } from '../utils/theme';
+import { theme as themeConfig } from '../utils/theme';
+
+import useLocalStorage from '../hooks/useLocalStorage';
 
 export const query = graphql`
   query SiteQuery {
@@ -27,52 +29,49 @@ export const query = graphql`
   }
 `
 
-class Layout extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      sideMenu: 'closed',
-      theme: 'light', // dark
-    }
-  }
+const Layout = (props) => {
+    const { currentTheme, setCurrentTheme } = useLocalStorage();
+    const [sideMenu, setSideMenu] = useState('closed');
+    const [theme, setTheme] = useState(currentTheme || 'light');
 
-  toggleSideMenu = () => {
-    if (this.state.sideMenu === 'open') {
+    useEffect(() => {
+      document
+        .getElementById('kbts-sidemenu-btn')
+      .addEventListener('click', toggleSideMenu);
+
+      return () => {
+        document
+      .getElementById('kbts-sidemenu-btn')
+      .removeEventListener('click', toggleSideMenu)
+      }
+    }, []);
+
+  const toggleSideMenu = () => {
+    if (sideMenu === 'open') {
       document.getElementsByClassName('kbts-site-container')[0].style[
         'grid-template-columns'
       ] =
         'auto'
-      this.setState({ sideMenu: 'closed' })
-    } else if (this.state.sideMenu === 'closed') {
+        setSideMenu('closed')
+    } else if (sideMenu === 'closed') {
       document.getElementsByClassName('kbts-site-container')[0].style[
         'grid-template-columns'
       ] =
         '160px auto'
-      this.setState({ sideMenu: 'open' })
+        setSideMenu('open');
     }
   }
 
-  componentDidMount() {
-    document
-      .getElementById('kbts-sidemenu-btn')
-      .addEventListener('click', this.toggleSideMenu)
-  }
-
-  componentWillUnmount() {
-    document
-      .getElementById('kbts-sidemenu-btn')
-      .removeEventListener('click', this.toggleSideMenu)
-  }
-
-  render() {
-    const GlobalStyle = createGlobalStyle`
+  const GlobalStyle = createGlobalStyle`
       html {
         --surface-main: ${({ theme }) => theme.surface.main};
         --on-surface-light: ${({ theme }) => theme.onSurface.light};
         --on-surface-main: ${({ theme }) => theme.onSurface.main};
+        --hover-surface-main: ${({ theme }) => theme.hoverSurface.main};
         --primary-main: ${({ theme }) => theme.primary.main};
         --primary-dark: ${({ theme }) => theme.primary.dark};
         --secondary-main: ${({ theme }) => theme.secondary.main};
+        --gray-scale-600: ${({ theme }) => theme.grayScale[600]};
         --box-shadow-sm: ${({ theme }) => theme.boxShadow.sm };
         --box-shadow-md: ${({ theme }) => theme.boxShadow.md };
         --box-shadow-mdActive: ${({ theme }) => theme.boxShadow.mdActive };
@@ -82,16 +81,17 @@ class Layout extends React.Component {
         --border-radius-md: ${({ theme }) => theme.borderRadius.md };
         --border-radius-lg: ${({ theme }) => theme.borderRadius.lg };
         --border-radius-rounded: ${({ theme }) => theme.borderRadius.rounded };
-
+        -webkit-tap-highlight-color: transparent;
       }
     `;
 
-    const { pathname } = this.props
+    const { pathname } = props
+
     return (
       <StaticQuery
         query={query}
         render={data => (
-          <ThemeProvider theme={theme[this.state.theme]}>
+          <ThemeProvider theme={themeConfig[theme]}>
             <div>
               <GlobalStyle />
               <Helmet
@@ -119,21 +119,25 @@ class Layout extends React.Component {
                 <SideMenu
                   logo={data.headerImage.sizes}
                   pathname={pathname}
-                  toggleSideMenu={this.toggleSideMenu}
+                  toggleSideMenu={toggleSideMenu}
+                  theme={theme}
+                  onSwitchTheme={() => {
+                    setCurrentTheme(theme === 'light' ? 'dark' : 'light');
+                    setTheme(theme === 'light' ? 'dark' : 'light')}
+                  }
                 />
                 <section className="kbts-site-main">
                   <header className="kbts-site-header">
                     <a id="kbts-sidemenu-btn" className="kbts-site-header-menu" />
                   </header>
-                  <main className="site-main-content">{this.props.children}</main>
+                  <main className="site-main-content">{props.children}</main>
                 </section>
               </div>
             </div>
           </ThemeProvider>
         )}
       />
-    )
-  }
+    );
 }
 
 Layout.propTypes = {
