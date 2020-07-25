@@ -71,11 +71,11 @@ body {
   width: 50px;
   margin: 10px;
   border-radius: var(--border-radius-md);
-  box-shadow: var(--box-shadow-md);
+  box-shadow: var(--box-shadow-sm);
 
   :active {
     border-radius: var(--border-radius-md);
-    box-shadow: var(--box-shadow-mdActive);
+    box-shadow: var(--box-shadow-smActive);
   }
 
   &-menu {
