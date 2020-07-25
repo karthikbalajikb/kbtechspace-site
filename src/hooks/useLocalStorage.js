@@ -1,13 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react'
 
 const useLocalStorage = () => {
-    const currentTheme = localStorage.getItem('THEME');
+  const [theme, setTheme] = useState('light')
+  useEffect(() => {
+    setTheme(localStorage.getItem('THEME'))
+  }, [])
 
-    const setCurrentTheme = (value) => localStorage.setItem('THEME', value)
-    return {
-        currentTheme,
-        setCurrentTheme
-    }
+  const setCurrentTheme = value => {
+    localStorage.setItem('THEME', value)
+    setTheme(value)
+  }
+
+  return {
+    theme,
+    setCurrentTheme,
+  }
 }
 
-export default useLocalStorage;
+export default useLocalStorage
