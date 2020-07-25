@@ -166,6 +166,7 @@ const PostContent = styled.div`
   padding: 20px;
   border-radius: ${({ theme }) => `${theme.borderRadius.none} ${theme.borderRadius.none} ${theme.borderRadius.md} ${theme.borderRadius.md}`};
   background-color: ${({ theme }) => `${theme.surface.main}`};
+  color: ${({ theme }) => `${theme.secondary.main}`};
 
   p {
     font-size: medium;
@@ -236,11 +237,12 @@ const Name = styled.div`
   align-self: flex-end;
   font-size: 14px;
   font-weight: 600;
+  color: ${({ theme }) => `${theme.onSurface.main}`};
 `
 
 const Metadata = styled.div`
   grid-column: 2;
   grid-row: 2;
   font-size: 12px;
-  color: #5c708a;
+  color:  ${({ theme }) => `${theme.grayScale[600]}`};
 `

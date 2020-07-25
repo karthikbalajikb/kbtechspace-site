@@ -11,6 +11,7 @@
     z-index: 100;
     padding-left: 0px;
     text-align: start;
+    color: var(--on-surface-main);
   }
 
   &-bar{
@@ -41,7 +42,7 @@
       text-align: center;
       width: 42px;
       line-height: 42px;
-      color: #345;
+      color: var(--on-surface-main);
       padding: 0 6px;
       background: var(--surface-main);
       border-radius: var(--border-radius-rounded);

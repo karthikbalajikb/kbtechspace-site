@@ -73,9 +73,17 @@ body {
   border-radius: var(--border-radius-md);
   box-shadow: var(--box-shadow-sm);
 
-  :active {
-    border-radius: var(--border-radius-md);
+  :hover {
+    background: linear-gradient(145deg, var(--hover-surface-main), var(--surface-main));
     box-shadow: var(--box-shadow-smActive);
+    border-radius: var(--border-radius-md);
+    color: var(--box-secondary-main);
+  }
+
+  :active {
+    background: linear-gradient(20deg, var(--hover-surface-main), var(--surface-main));
+    box-shadow: var(--box-shadow-smActive);
+    border-radius: var(--border-radius-md);
   }
 
   &-menu {
@@ -87,7 +95,7 @@ body {
   &-menu:before {
     content: fa-content($fa-var-bars);
     font-size: x-large;
-    color: #1c262b;
+    color: var(--on-surface-main);
   }
   &-text {
     color: white;

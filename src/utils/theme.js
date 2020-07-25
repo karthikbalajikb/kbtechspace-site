@@ -59,7 +59,7 @@ const grayScale = {
   300: '#e2e8f0',
   400: '#cbd5e0',
   500: '#a0aec0',
-  600: '#718096',
+  600: '#6e7579',
   700: '#4a5568',
   800: '#2d3748',
   900: '#1a202c',
@@ -70,10 +70,16 @@ const shadowColor = {
   200: '#c8d0e7',
   300: '#bec8e4',
   400: '#9baacf',
+
+  500: '#373b3e',
+  600: '#12151b',
+  700: '#bec8e4',
+  800: '#9baacf',
 }
 
 export const theme = {
   light: {
+    grayScale: grayScale,
     transparent: 'transparent',
     primary: {
       light: '',
@@ -173,5 +179,103 @@ export const theme = {
       full: '9999px',
     },
   },
-  ...productColors,
+  dark: {
+    grayScale: grayScale,
+    transparent: 'transparent',
+    primary: {
+      light: '',
+      main: '#fcde59',
+      dark: '#f4d242',
+    },
+    onPrimary: {
+      light: '#FFFFFF',
+      main: '#FFFFFF',
+      dark: '#9baacf',
+    },
+    secondary: {
+      light: '',
+      main: '#9baacf',
+      dark: '',
+    },
+    onSecondary: {
+      light: '#FFFFFF',
+      main: '#FFFFFF',
+      dark: '#FFFFFF',
+    },
+    background: {
+      light: '#FFFFFF',
+      main: '#F4F4F4',
+      dark: '#E5E5E5',
+    },
+    onBackground: {
+      light: '#5C5C5C',
+      main: '#5C5C5C',
+      dark: '#5C5C5C',
+    },
+    surface: {
+      light: '#ffffff',
+      main: '#171D1E',
+      dark: '#000000',
+    },
+    onSurface: {
+      light: '#919cb5',
+      main: '#7482A2',
+      dark: '#ffffff',
+    },
+    hoverSurface: {
+      main: shadowColor[500],
+    },
+    error: {
+      light: '#FB3F41',
+      main: '#E83739',
+      dark: '#D93536',
+    },
+    onError: {
+      light: '#FFFFFF',
+      main: '#FFFFFF',
+      dark: '#FFFFFF',
+    },
+    spacing: {
+      px: '1px',
+      '0': '0',
+      '1': '0.25rem',
+      '2': '0.5rem',
+      '3': '0.75rem',
+      '4': '1rem',
+      '5': '1.25rem',
+      '6': '1.5rem',
+      '8': '2rem',
+      '10': '2.5rem',
+      '12': '3rem',
+      '16': '4rem',
+      '20': '5rem',
+      '24': '6rem',
+      '32': '8rem',
+      '40': '10rem',
+      '48': '12rem',
+      '56': '14rem',
+      '64': '16rem',
+    },
+    boxShadow: {
+      sm: `0.3rem 0.3rem 0.6rem ${shadowColor[600]}, -0.2rem -0.2rem 0.5rem #373b3e`,
+      smActive: `0.3rem 0.3rem 0.6rem ${shadowColor[600]}, -0.2rem -0.2rem 0.5rem #373b3e`,
+      md: `0.8rem 0.8rem 1.4rem ${shadowColor[600]}, -0.2rem -0.2rem 1.8rem #373b3e`,
+      mdActive: `0.8rem 0.8rem 1.4rem ${shadowColor[600]}, -0.2rem -0.2rem 1.8rem #373b3e`,
+      lg: `8px 8px 16px 0px ${shadowColor[600]}, -8px -8px 16px 0px #373b3e`,
+      xl:
+        '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
+      inner: `inset 2px 2px 5px ${shadowColor[600]}, inset -3px -3px 7px #373b3e`,
+      outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
+      none: 'none',
+    },
+    borderRadius: {
+      none: '0',
+      sm: '0.5rem',
+      default: '1rem', // 16px
+      md: '2rem',
+      lg: '3rem',
+      rounded: '50px',
+      full: '9999px',
+    },
+  },
 }

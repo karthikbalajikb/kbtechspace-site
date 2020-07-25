@@ -25,9 +25,10 @@ const Container = styled.div`
 const Stats = styled.div`
   font-size: 48px;
   font-weight: 300;
+  color: ${({ theme }) => `${theme.secondary.main}`};
 `
 
 const StatsLabel = styled.div`
   font-size: 15px;
-  color: #a4a5a7;
+  color:  ${({ theme }) => `${theme.grayScale[600]}`};
 `

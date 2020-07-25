@@ -1,7 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
 
-import * as defaultTheme from '../../utils/theme';
+import * as defaultTheme from '../../utils/theme'
 
 const SideMenuContentItem = props => {
   const handleSideMenuSelect = () => {
@@ -9,7 +9,15 @@ const SideMenuContentItem = props => {
   }
 
   const selectedStyle = () =>
-    props.active ? { boxShadow: `${defaultTheme.theme.light.boxShadow.inner}`, color: `${defaultTheme.theme.light.secondary.main}` } : {}
+    props.active
+      ? {
+          boxShadow: `${defaultTheme.theme[props.theme].boxShadow.inner}`,
+          color:
+            props.theme === 'dark'
+              ? `${defaultTheme.theme[props.theme].primary.dark}`
+              : `${defaultTheme.theme[props.theme].secondary.main}`,
+        }
+      : {}
 
   return (
     <Link className={`sideMenuContent-item-${props.cls}`} to={props.pathname}>

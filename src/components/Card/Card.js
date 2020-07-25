@@ -139,20 +139,20 @@ const InfoSection = styled.div`
 
 const AuthorName = styled.div`
   font-size: 13px;
-  color: #999;
+  color: ${({ theme }) => `${theme.grayScale[600]}`};
   grid-row: 2;
 `
 
 const PostTitle = styled.div`
   font-weight: bold;
   grid-row: 3;
-  color: ${({ theme }) => `${theme.secondary.main}`};
+  color: ${({ theme }) => `${theme.onSurface.main}`};
   font-size: 15px;
   padding: 0 15px;
 `
 
 const PostDate = styled.div`
   font-size: 13px;
-  color: #999;
+  color: ${({ theme }) => `${theme.grayScale[600]}`};
   grid-row: 4;
 `

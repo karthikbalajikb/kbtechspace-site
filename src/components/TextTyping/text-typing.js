@@ -54,7 +54,7 @@ const StyledCodeText = styled.code`
   justify-self: center;
   align-self: end;
   margin-bottom: 15px;
-
+  color: ${({ theme }) => `${theme.secondary.main}`};
   @media(max-width: 760px) {
     display: none;
   }
