@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 
 const useLocalStorage = () => {
-  const [theme, setTheme] = useState('light')
+  const DEFAULT_THEME = 'light';
+  const [theme, setTheme] = useState(DEFAULT_THEME)
   useEffect(() => {
-    setTheme(localStorage.getItem('THEME'))
+    setTheme(localStorage.getItem('THEME') || DEFAULT_THEME);
   }, [])
 
   const setCurrentTheme = value => {
