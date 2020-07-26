@@ -1,18 +1,24 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
+// components
 import SideMenu from './side-menu/side-menu'
-import Header from './header'
+
+// hooks
+import useLocalStorage from '../hooks/useLocalStorage'
+
+// styles
 import './index.scss'
-import favicon from '../../assets/logo.png'
 import 'prismjs/themes/prism-tomorrow.css'
 
-import { theme as themeConfig } from '../utils/theme'
+// assets
+import favicon from '../../assets/logo.png'
 
-import useLocalStorage from '../hooks/useLocalStorage'
+// theme configuration
+import { theme as themeConfig } from '../utils/theme'
 
 export const query = graphql`
   query SiteQuery {
@@ -32,30 +38,19 @@ export const query = graphql`
 const Layout = props => {
   const { theme, setCurrentTheme } = useLocalStorage()
   const [sideMenu, setSideMenu] = useState('closed')
-
-  useEffect(() => {
-    document
-      .getElementById('kbts-sidemenu-btn')
-      .addEventListener('click', toggleSideMenu)
-
-    return () => {
-      document
-        .getElementById('kbts-sidemenu-btn')
-        .removeEventListener('click', toggleSideMenu)
-    }
-  }, [])
+  const { pathname } = props
 
   const toggleSideMenu = () => {
     if (sideMenu === 'open') {
+      setSideMenu('closed')
       document.getElementsByClassName('kbts-site-container')[0].style[
         'grid-template-columns'
       ] = 'auto'
-      setSideMenu('closed')
     } else if (sideMenu === 'closed') {
+      setSideMenu('open')
       document.getElementsByClassName('kbts-site-container')[0].style[
         'grid-template-columns'
       ] = '160px auto'
-      setSideMenu('open')
     }
   }
 
@@ -64,6 +59,7 @@ const Layout = props => {
         --surface-main: ${({ theme }) => theme.surface.main};
         --on-surface-light: ${({ theme }) => theme.onSurface.light};
         --on-surface-main: ${({ theme }) => theme.onSurface.main};
+        --hover-surface-light: ${({ theme }) => theme.hoverSurface.light};
         --hover-surface-main: ${({ theme }) => theme.hoverSurface.main};
         --primary-main: ${({ theme }) => theme.primary.main};
         --primary-dark: ${({ theme }) => theme.primary.dark};
@@ -81,8 +77,6 @@ const Layout = props => {
         -webkit-tap-highlight-color: transparent;
       }
     `
-
-  const { pathname } = props
 
   return (
     <StaticQuery
@@ -124,7 +118,7 @@ const Layout = props => {
               />
               <section className="kbts-site-main">
                 <header className="kbts-site-header">
-                  <a id="kbts-sidemenu-btn" className="kbts-site-header-menu" />
+                  <a id="kbts-sidemenu-btn" className="kbts-site-header-menu" onClick={toggleSideMenu} />
                 </header>
                 <main className="site-main-content">{props.children}</main>
               </section>

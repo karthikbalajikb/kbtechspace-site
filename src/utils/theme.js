@@ -71,7 +71,7 @@ const shadowColor = {
   300: '#bec8e4',
   400: '#9baacf',
 
-  500: '#373b3e',
+  500: '#373b3ec9',
   600: '#12151b',
   700: '#bec8e4',
   800: '#9baacf',
@@ -122,6 +122,7 @@ export const theme = {
       dark: '#ffffff',
     },
     hoverSurface: {
+      light: '#e4ebf5',
       main: shadowColor[200],
     },
     error: {
@@ -223,7 +224,8 @@ export const theme = {
       dark: '#ffffff',
     },
     hoverSurface: {
-      main: shadowColor[500],
+      light: shadowColor[500],
+      main: '#171D1E',
     },
     error: {
       light: '#FB3F41',
@@ -257,14 +259,14 @@ export const theme = {
       '64': '16rem',
     },
     boxShadow: {
-      sm: `0.3rem 0.3rem 0.6rem ${shadowColor[600]}, -0.2rem -0.2rem 0.5rem #373b3e`,
+      sm: `0.3rem 0.3rem 0.6rem ${shadowColor[600]}, -0.2rem -0.2rem 0.5rem #373b3e8f`,
       smActive: `0.3rem 0.3rem 0.6rem ${shadowColor[600]}, -0.2rem -0.2rem 0.5rem #373b3e`,
-      md: `0.8rem 0.8rem 1.4rem ${shadowColor[600]}, -0.2rem -0.2rem 1.8rem #373b3e`,
+      md: `0.8rem 0.8rem 1.4rem ${shadowColor[600]}, -0.2rem -0.2rem 1.8rem #373b3e8f`,
       mdActive: `0.8rem 0.8rem 1.4rem ${shadowColor[600]}, -0.2rem -0.2rem 1.8rem #373b3e`,
-      lg: `8px 8px 16px 0px ${shadowColor[600]}, -8px -8px 16px 0px #373b3e`,
+      lg: `8px 8px 16px 0px ${shadowColor[600]}, -8px -8px 16px 0px #373b3e8f`,
       xl:
         '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-      inner: `inset 2px 2px 5px ${shadowColor[600]}, inset -3px -3px 7px #373b3e`,
+      inner: `inset 2px 2px 5px ${shadowColor[600]}, inset -3px -3px 7px #373b3e8f`,
       outline: '0 0 0 3px rgba(66, 153, 225, 0.5)',
       none: 'none',
     },
