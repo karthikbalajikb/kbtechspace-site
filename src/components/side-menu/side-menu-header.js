@@ -14,7 +14,7 @@ export default SideMenuHeader
 
 const Container = styled.div`
   padding: 6px;
-  margin-top: 30px;
+  margin-top: 10px;
   box-shadow: ${({ theme }) => `${theme.boxShadow.sm}`};
   border-radius: ${({ theme }) => `${theme.borderRadius.md}`};
 `
