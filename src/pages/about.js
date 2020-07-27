@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Layout from '../components'
+import Layout from '../components/Layout/Layout'
 import PageHeader from '../components/page-header/page-header'
 import Ribbon from '../components/Ribbon/ribbon'
 import ServiceCard from '../components/ServiceCard/service-card'

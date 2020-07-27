@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
-import Layout from '../components'
+import Layout from '../components/Layout/Layout'
 import PageHeader from '../components/page-header/page-header'
 import StepperList from '../components/stepper-list/stepper-list'
 import SliderList from '../components/SliderList/slider-list'

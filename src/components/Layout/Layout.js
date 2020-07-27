@@ -5,20 +5,20 @@ import { StaticQuery, graphql } from 'gatsby'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 // components
-import SideMenu from './side-menu/side-menu'
+import SideMenu from '../side-menu/side-menu'
 
 // hooks
-import useLocalStorage from '../hooks/useLocalStorage'
+import useLocalStorage from '../../hooks/useLocalStorage'
 
 // styles
-import './index.scss'
+import './Layout.scss'
 import 'prismjs/themes/prism-tomorrow.css'
 
 // assets
-import favicon from '../../assets/logo.png'
+import favicon from '../../../assets/logo.png'
 
 // theme configuration
-import { theme as themeConfig } from '../utils/theme'
+import { theme as themeConfig } from '../../utils/theme'
 
 export const query = graphql`
   query SiteQuery {
