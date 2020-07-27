@@ -79,6 +79,7 @@ const shadowColor = {
 
 export const theme = {
   light: {
+    name: 'light',
     grayScale: grayScale,
     transparent: 'transparent',
     primary: {
@@ -181,6 +182,7 @@ export const theme = {
     },
   },
   dark: {
+    name: 'dark',
     grayScale: grayScale,
     transparent: 'transparent',
     primary: {
