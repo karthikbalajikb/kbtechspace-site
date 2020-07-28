@@ -34,8 +34,8 @@ const AppHeader = ({ logo, pathname, theme, onSwitchTheme }) => {
           label={
             <Image
               src={theme === 'light' ? moonSVG : sunSVG}
-              width="30px"
-              height="30px"
+              width="24px"
+              height="24px"
               alt="theme-switch"
             />
           }
@@ -50,8 +50,8 @@ const AppHeader = ({ logo, pathname, theme, onSwitchTheme }) => {
             label={
               <Image
                 src={showModal ? closeSVG : burgerMenuSVG}
-                width="24px"
-                height="24px"
+                width="20px"
+                height="20px"
                 alt="theme-switch"
               />
             }

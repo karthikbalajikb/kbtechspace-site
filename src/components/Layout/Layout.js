@@ -145,7 +145,7 @@ const LayoutContainer = styled.div`
 
 const MainContainer = styled.section`
   display: grid;
-  grid-template-rows: 70px auto;
+  grid-template-rows: 90px auto;
   background-color: ${({ theme }) => `${theme.surface.main}`};
 
   *::-webkit-scrollbar-thumb {
