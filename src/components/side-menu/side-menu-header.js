@@ -18,8 +18,8 @@ const Container = styled.div`
   box-shadow: ${({ theme }) => `${theme.boxShadow.sm}`};
   border-radius: ${({ theme }) => `${theme.borderRadius.md}`};
   @media(max-width: 760px) {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     margin-top: 0px;
   }
 `
