@@ -10,13 +10,10 @@ import { Flexbox } from '../../styles/styled'
 
 import './side-menu.scss'
 
-const SideMenu = ({ onSwitchTheme, ...props }) => (
+const SideMenu = ({ ...props }) => (
   <nav  className="side-menu">
     <SideMenuHeader  logo={props.logo}/>
-    <SideMenuContent defaultpath={props.pathname} toggleSideMenu={props.toggleSideMenu} theme={props.theme} />
-    <Flexbox justifyContent="center" mt={50}>
-      <Button label={props.theme} onClick={onSwitchTheme} />
-    </Flexbox>
+    <SideMenuContent defaultpath={props.pathname} theme={props.theme} />
     <SideMenuFooter />
   </nav>
 )
