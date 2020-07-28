@@ -2,6 +2,9 @@ import React from "react";
 import { createPortal } from "react-dom";
 import styled from "styled-components";
 
+// utils
+import { APP_HEADER_HEIGHT } from '../../utils/constants';
+
 const Modal = ({ open, children, onClose }) => {
   if (!open) return null;
 
@@ -26,8 +29,7 @@ const Container = styled.div`
   background-color: ${({ theme }) => `${theme.surface.main}`};
   height: 100%;
   width: 100%;
-  /* use constant */
-  top: 70px;
+  top: ${APP_HEADER_HEIGHT}px;
   left: 0;
 `;
 

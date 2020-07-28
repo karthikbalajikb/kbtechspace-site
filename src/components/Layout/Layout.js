@@ -16,6 +16,9 @@ import useMediaQuery from '../../hooks/useMediaQuery'
 import './Layout.scss'
 import 'prismjs/themes/prism-tomorrow.css'
 
+// utils
+import { APP_HEADER_HEIGHT } from '../../utils/constants';
+
 // assets
 import favicon from '../../../assets/logo.png'
 
@@ -145,7 +148,7 @@ const LayoutContainer = styled.div`
 
 const MainContainer = styled.section`
   display: grid;
-  grid-template-rows: 90px auto;
+  grid-template-rows: ${APP_HEADER_HEIGHT}px auto;
   background-color: ${({ theme }) => `${theme.surface.main}`};
 
   *::-webkit-scrollbar-thumb {
