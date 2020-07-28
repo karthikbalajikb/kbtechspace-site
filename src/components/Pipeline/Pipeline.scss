@@ -27,5 +27,8 @@
     top: 40px;
     font-weight: 900;
     color: var(--on-surface-main);
+    @media(max-width: 760px) {
+      content: none;
+    }
   }
 }
