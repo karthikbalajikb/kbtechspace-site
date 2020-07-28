@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import styled from 'styled-components'
 
-import Layout from '../components'
+import Layout from '../components/Layout/Layout'
 import PageHeader from '../components/page-header/page-header'
 import StepperList from '../components/stepper-list/stepper-list'
 import SliderList from '../components/SliderList/slider-list'
@@ -122,7 +122,7 @@ class Resume extends React.Component {
             />
             <html lang="en" />
           </Helmet>
-          <FixedDownloadButton>
+          <StickyDownloadButton>
             <Button
               label="Download"
               onClick={() =>
@@ -131,7 +131,7 @@ class Resume extends React.Component {
                 )
               }
             />
-          </FixedDownloadButton>
+          </StickyDownloadButton>
           <PageHeader title="Profile" logo="fas fa-id-card-alt" />
           <div className="kbts-page-resume-content">
             <StepperList title="WORK HISTORY" icon="fa-laptop" jobs={jobs} />
@@ -199,8 +199,10 @@ class Resume extends React.Component {
 
 export default Resume
 
-const FixedDownloadButton = styled.div`
-  position: absolute;
-  right: 50px;
-  top: 29px;
+const StickyDownloadButton = styled.div`
+  position: sticky;
+  top: 55px;
+  left: 87%;
+  width: 120px;
+  z-index: 1;
 `

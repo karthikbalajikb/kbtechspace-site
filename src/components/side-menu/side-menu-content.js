@@ -44,7 +44,6 @@ class SideMenuContent extends React.Component {
     let setOthersToDefault = this.state.sideMenuData
       .filter(d => d.label !== lbl)
       .map(m => (m.active = false))
-      this.props.toggleSideMenu()
   }
 
   render() {

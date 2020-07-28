@@ -4,7 +4,7 @@ import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 import wallpaperSVG from '../../assets/wallpaper-illustration.svg'
-import Layout from '../components'
+import Layout from '../components/Layout/Layout'
 import NameCard from '../components/NameCard/name-card'
 import TextTyping from '../components/TextTyping/text-typing'
 

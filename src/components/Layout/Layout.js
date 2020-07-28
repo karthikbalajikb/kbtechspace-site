@@ -1,24 +1,26 @@
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import { StaticQuery, graphql } from 'gatsby'
-import { createGlobalStyle, ThemeProvider } from 'styled-components'
+import styled, { createGlobalStyle, ThemeProvider } from 'styled-components'
 
 // components
-import SideMenu from './side-menu/side-menu'
+import SideMenu from '../side-menu/side-menu'
+import AppHeader from '../AppHeader'
 
 // hooks
-import useLocalStorage from '../hooks/useLocalStorage'
+import useLocalStorage from '../../hooks/useLocalStorage'
+import useMediaQuery from '../../hooks/useMediaQuery'
 
 // styles
-import './index.scss'
+import './Layout.scss'
 import 'prismjs/themes/prism-tomorrow.css'
 
 // assets
-import favicon from '../../assets/logo.png'
+import favicon from '../../../assets/logo.png'
 
 // theme configuration
-import { theme as themeConfig } from '../utils/theme'
+import { theme as themeConfig } from '../../utils/theme'
 
 export const query = graphql`
   query SiteQuery {
@@ -37,22 +39,9 @@ export const query = graphql`
 
 const Layout = props => {
   const { theme, setCurrentTheme } = useLocalStorage()
-  const [sideMenu, setSideMenu] = useState('closed')
-  const { pathname } = props
+  const { isMobile } = useMediaQuery()
 
-  const toggleSideMenu = () => {
-    if (sideMenu === 'open') {
-      setSideMenu('closed')
-      document.getElementsByClassName('kbts-site-container')[0].style[
-        'grid-template-columns'
-      ] = 'auto'
-    } else if (sideMenu === 'closed') {
-      setSideMenu('open')
-      document.getElementsByClassName('kbts-site-container')[0].style[
-        'grid-template-columns'
-      ] = '160px auto'
-    }
-  }
+  const { pathname } = props
 
   const GlobalStyle = createGlobalStyle`
       html {
@@ -106,23 +95,29 @@ const Layout = props => {
                 { rel: 'shortcut icon', type: 'image/jpg', href: `${favicon}` },
               ]}
             />
-            <div className="kbts-site-container">
-              <SideMenu
-                logo={data.headerImage.sizes}
-                pathname={pathname}
-                toggleSideMenu={toggleSideMenu}
-                theme={theme}
-                onSwitchTheme={() => {
-                  setCurrentTheme(theme === 'light' ? 'dark' : 'light')
-                }}
-              />
-              <section className="kbts-site-main">
-                <header className="kbts-site-header">
-                  <a id="kbts-sidemenu-btn" className="kbts-site-header-menu" onClick={toggleSideMenu} />
-                </header>
+            {/* main layout */}
+            <LayoutContainer>
+              {!isMobile && (
+                <SideMenu
+                  logo={data.headerImage.sizes}
+                  pathname={pathname}
+                  theme={theme}
+                />
+              )}
+              <MainContainer>
+                {/* App header */}
+                <AppHeader
+                  logo={data.headerImage.sizes}
+                  pathname={pathname}
+                  theme={theme}
+                  onSwitchTheme={() => {
+                    setCurrentTheme(theme === 'light' ? 'dark' : 'light')
+                  }}
+                />
+                {/*  pages content  */}
                 <main className="site-main-content">{props.children}</main>
-              </section>
-            </div>
+              </MainContainer>
+            </LayoutContainer>
           </div>
         </ThemeProvider>
       )}
@@ -135,3 +130,30 @@ Layout.propTypes = {
 }
 
 export default Layout
+
+const LayoutContainer = styled.div`
+  display: grid;
+  grid-template-columns: 200px auto;
+  height: 100vh;
+  overflow: hidden;
+  background-color: ${({ theme }) => `${theme.surface.main}`};
+
+  @media (max-width: 760px) {
+    grid-template-columns: auto;
+  }
+`
+
+const MainContainer = styled.section`
+  display: grid;
+  grid-template-rows: 70px auto;
+  background-color: ${({ theme }) => `${theme.surface.main}`};
+
+  *::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(28, 38, 43, 0.2);
+  }
+
+  *::-webkit-scrollbar {
+    width: 10px;
+  }
+`

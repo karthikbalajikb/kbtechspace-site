@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import styled from 'styled-components';
 
-import Layout from '../components'
+import Layout from '../components/Layout/Layout'
 import PageHeader from '../components/page-header/page-header'
 import Card from '../components/Card/Card'
 import SubscribeCard from '../components/SubscribeCard'

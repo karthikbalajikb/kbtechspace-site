@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 
-import Layout from '../components'
+import Layout from '../components/Layout/Layout'
 import PageHeader from '../components/page-header/page-header'
 import Ribbon from '../components/Ribbon/ribbon'
 import StatsCard from '../components/StatsCard'

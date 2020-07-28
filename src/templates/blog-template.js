@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import styled from 'styled-components'
 import { DiscussionEmbed } from 'disqus-react'
 
-import Layout from '../components'
+import Layout from '../components/Layout/Layout'
 import SubscribeCard from '../components/SubscribeCard'
 
 import './blog-template.scss'
