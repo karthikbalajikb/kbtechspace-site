@@ -54,3 +54,19 @@
   animation-delay: 1s;
   animation-duration: 1s;
 }
+
+@keyframes opening {
+  0% {
+    width: 0%;
+  }
+  50% {
+    transform: 50%;
+  }
+  100% {
+    transform: 100%;
+  }
+}
+.opening {
+  animation-name: opening;
+  animation-duration: 2s;
+}

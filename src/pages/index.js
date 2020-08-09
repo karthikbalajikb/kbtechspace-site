@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
-import wallpaperSVG from '../../assets/wallpaper-illustration.svg'
+import wallpaperSVG from '../../assets/development-animate.svg'
 import Layout from '../components/Layout/Layout'
 import NameCard from '../components/NameCard/name-card'
 import TextTyping from '../components/TextTyping/text-typing'
@@ -17,7 +17,7 @@ const IndexPage = () => (
         text_4="UI/UX Enthusiast"
         text_5="Tech Blogger"
       />
-      <WallpaperWrapper>
+      <WallpaperWrapper className="animated opening">
         <StyledWallpaper src={wallpaperSVG} alt="kb-wallpaper" />
       </WallpaperWrapper>
       <TextTyping text_3="Hitting the keyboard hard, Until the magic happens" />
@@ -53,10 +53,12 @@ const WallpaperWrapper = styled.div`
 `
 
 const StyledWallpaper = styled.img`
-  padding: 30px;
   border-radius: 42% 70% 67% 9% / 6% 54% 96% 35%;
   background-color: ${({ theme }) => `${theme.primary.dark}`};
-
+  object-fit: cover;
+  min-height: 270px;
+  height: 31rem;
+  max-height: 500px;
   @media (max-width: 760px) {
     height: initial;
   }
