@@ -36,7 +36,8 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
   &-about,
   &-blog,
   &-resume,
-  &-dashboard {
+  &-dashboard,
+  &-apps-built {
     display: grid;
     text-decoration: none;
     color: var(--on-surface-main);
@@ -55,7 +56,8 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
   &-about-icon,
   &-blog-icon,
   &-resume-icon,
-  &-dashboard-icon {
+  &-dashboard-icon,
+  &-apps-built-icon {
     @extend .fas;
     padding-bottom: 4px;
     font-size: large;
@@ -75,6 +77,9 @@ $fa-font-path: '../../../assets/fontawesome/webfonts';
   }
   &-dashboard-icon:before {
     content: fa-content($fa-var-tachometer-alt);
+  }
+  &-apps-built-icon:before {
+    content: fa-content($fa-var-rocket);
   }
 }
 
