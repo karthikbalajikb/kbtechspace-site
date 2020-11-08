@@ -127,7 +127,7 @@ class Resume extends React.Component {
               label="Download"
               onClick={() =>
                 window.open(
-                  'https://firebasestorage.googleapis.com/v0/b/kbtechspace-8907.appspot.com/o/know_about_kb_2020.pdf?alt=media&token=8ce12eff-5f26-4351-9ecb-bf148b2e407b'
+                  'https://firebasestorage.googleapis.com/v0/b/kbtechspace-8907.appspot.com/o/karthik-balaji-FE-2020.pdf?alt=media&token=34a58bb4-5177-456b-9a52-a2595537a9b7'
                 )
               }
             />
