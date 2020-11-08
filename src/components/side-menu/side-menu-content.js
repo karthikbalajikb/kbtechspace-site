@@ -15,6 +15,7 @@ class SideMenuContent extends React.Component {
         { label: 'BLOG', path: '/blog/', class: 'blog', active: false },
         { label: 'PROFILE', path: '/profile/', class: 'resume', active: false },
         { label: 'DASHBOARD', path: '/dashboard/', class: 'dashboard', active: false },
+        { label: 'Apps Built', path: '/apps-built/', class: 'apps-built', active: false },
       ],
     }
   }

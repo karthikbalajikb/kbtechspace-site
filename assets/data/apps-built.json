@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "title": "Auzmor Learn",
+    "subTitle": "Learning Management System (SaaS)",
+    "description": "Launching, tracking, and reporting for any type of training, in one centralized location, viewable on any device.",
+    "logo": "auzmor-learn.png",
+    "linkUrl": "https://auzmor.com/learn/"
+  },
+  {
+    "id": 2,
+    "title": "Ally.io",
+    "subTitle": "OKR Platform (SaaS)",
+    "description": "The Ally.io OKR system keeps remote teams focused on goals that drive results, with visibility at every level.",
+    "logo": "allyio.png",
+    "linkUrl": "https://www.ally.io/"
+  },
+  {
+    "id": 3,
+    "title": "Freshflows",
+    "subTitle": "Project Management Suite (SaaS)",
+    "description": "Research, collaborate and launch your products on a single platform",
+    "logo": "freshflows.jpeg",
+    "linkUrl": "https://freshflows.io/"
+  },
+  {
+    "id": 4,
+    "title": "Poorna Clinic",
+    "subTitle": "Landing Page",
+    "description": "Made it easy to find the clinic",
+    "logo": "poornaclinic.png",
+    "linkUrl": "https://poornaclinic.com/"
+  },
+  {
+    "id": 5,
+    "title": "Tachyloans",
+    "subTitle": "Peer-to-Peer lending plaform",
+    "description": "",
+    "logo": "tachylogo.png",
+    "linkUrl": "https://www.tachyloans.com/"
+  },
+  {
+    "id": 6,
+    "title": "Neumorphism Design System",
+    "subTitle": "OSS",
+    "description": "An open source library for neumorphism UI",
+    "logo": "nuemorphism.jpg",
+    "linkUrl": "https://neumorphism-ui.web.app/?path=/story/design-system-atoms-button--primary-button"
+  }
+]
