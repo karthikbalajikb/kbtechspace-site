@@ -46,5 +46,13 @@
     "description": "An open source library for neumorphism UI",
     "logo": "nuemorphism.jpg",
     "linkUrl": "https://neumorphism-ui.web.app/?path=/story/design-system-atoms-button--primary-button"
+  },
+  {
+    "id": 7,
+    "title": "Microsoft Viva Goals",
+    "subTitle": "Goals management software",
+    "description": "Align your teams and drive results by managing your business goals in one central place.",
+    "logo": "vivagoals.png",
+    "linkUrl": "https://www.microsoft.com/en-in/microsoft-viva/goals"
   }
 ]
